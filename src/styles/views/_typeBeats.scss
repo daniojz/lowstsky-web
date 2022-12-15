@@ -1,7 +1,51 @@
-#typeBeats_section {
+#editTypeBeats_section {
     width: 100%;
     height: 100%;
     display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+}
+
+.editTypeBeats_editBeat {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.editTypeBeats_editBeat_form {
+    height: 100%;
+    display: flex;
+    justify-content: right;
+    align-items: flex-end;
+    flex-direction: column;
+
+    label {
+        margin: 3%;
+        display: flex;
+        justify-content: right;
+
+        span {
+            margin-right: 4%;
+        }
+    }
+
+    .editTypeBeats_editBeat_form_content {
+        
+    }
+
+    .editTypeBeats_editBeat_form_addButton {
+
+    }
+}
+
+.editTypeBeats_list {
+    width: 50%;
+    height: 500px;
+    display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    overflow: scroll;
 }
