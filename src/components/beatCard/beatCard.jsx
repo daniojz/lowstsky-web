@@ -1,7 +1,7 @@
 import React from "react";
 import { Icon } from "@iconify/react";
 
-const beatCard = ({title, price, photoUrl}) => {
+const BeatCard = ({title, price, photoUrl}) => {
   return (
     <div className="beatCard_container">
         <p>{title}</p>
@@ -11,4 +11,4 @@ const beatCard = ({title, price, photoUrl}) => {
   );
 }
 
-export default beatCard
+export default BeatCard

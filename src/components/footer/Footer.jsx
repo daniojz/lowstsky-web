@@ -1,5 +1,5 @@
 import React from "react";
-import FollowMe from "../followMe/FollowMe";
+import FollowMe from "../FollowMe/FollowMe";
 import FooterBox from "./footerBox/FooterBox";
 
 export default function Footer({}) {

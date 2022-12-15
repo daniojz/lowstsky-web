@@ -1,21 +1,26 @@
 import React from "react";
 import PropTypes from 'prop-types'
-import beatCard from "../../components/beatCard/beatCard";
+import BeatCard from "../../components/BeatCard/BeatCard";
 
-const typeBeats = ({beatList}) => {
+const TypeBeats = ({beatList}) => {
 
   const beats = [
     {title: "hola1", price: "3", photoUrl: "asdfasdf.com"},
     {title: "hola2", price: "5", photoUrl: "asdfasdf.com"},
     {title: "hola3", price: "9", photoUrl: "asdfasdf.com"},
     {title: "hola4", price: "3", photoUrl: "asdfasdf.com"},
+    {title: "hola4", price: "3", photoUrl: "asdfasdf.com"},
+    {title: "hola4", price: "3", photoUrl: "asdfasdf.com"},
+    {title: "hola4", price: "3", photoUrl: "asdfasdf.com"},
+    {title: "hola4", price: "3", photoUrl: "asdfasdf.com"},
+
   ]
 
   const renderBeat = (beat) => {
     const {title, price, photourl} = beat;
 
     return (
-      <beatCard title={title} price={price} photoUrl={photourl}></beatCard>
+      <BeatCard title={title} price={price} photoUrl={photourl}></BeatCard>
     )
   }
 
@@ -23,13 +28,14 @@ const typeBeats = ({beatList}) => {
     <>
       <section id="typeBeats_section">
         {beats.map(beat => renderBeat(beat))}
+        <p>hola</p>
       </section>  
     </>
   );
 }
 
-typeBeats.propTypes = {
+TypeBeats.propTypes = {
   beatList: PropTypes.arrayOf()
 }
 
-export default typeBeats
+export default TypeBeats
