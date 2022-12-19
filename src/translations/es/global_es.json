@@ -1,0 +1,19 @@
+{
+    "header": {
+        "navbar": {
+            "sobre-mi": "SOBRE MI",
+            "type-beats": "TYPE BEATS",
+            "beats-personalizados": "BEATS PERSONALIZADOS",
+            "mezcla-mastering": "MEZCLA Y MASTERING",
+            "producciones-colabs": "PRODUCCIONES COLABS",
+            "artwork": "ARTWORK"
+        }
+    },
+    "main": {
+        "home_section": {
+        }
+    },
+    "footer": {
+
+    }
+}

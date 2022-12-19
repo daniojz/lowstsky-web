@@ -8,7 +8,7 @@
   background-repeat: no-repeat;
   background-size: cover;
 
-  .App {
+  .App, main, #root {
     width: 100%;
     height: 100%;
     margin: 0;
@@ -23,10 +23,16 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  font-size: 16px;
+  font-size: 15px;
 }
 
-
+section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 //font
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300&display=swap');
@@ -36,6 +42,9 @@ body {
 
 //components
 @import './components/navbar';
+@import './components/footer';
+@import './components/followMe';
 
 //views
 @import './views/home';
+@import './views/sobreMi';

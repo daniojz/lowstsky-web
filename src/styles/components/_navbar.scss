@@ -9,7 +9,7 @@ nav {
     background-color: transparent;
     color: black;
 
-    .content {
+    .navbar_container {
         width: 80%;
         display: flex;
         justify-content: space-around;
@@ -36,6 +36,10 @@ nav {
                 width: 100px;
             }
         }
+    }
+
+    .none {
+        display: none;
     }
 }
 
