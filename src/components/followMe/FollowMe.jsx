@@ -1,7 +1,7 @@
 import React from "react";
 import { Icon } from "@iconify/react";
 
-export default function FollowMe({}) {
+const FollowMe = ({}) => {
   return (
     <div className="followMe_container">
       <span>
@@ -32,3 +32,5 @@ export default function FollowMe({}) {
     </div>
   );
 }
+
+export default FollowMe
