@@ -1,0 +1,40 @@
+.AnimationPruebaComponent {
+    width: 100%;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonContainer {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+}
+
+.textContainer {
+    width: 50%;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    transition: visibility 0s linear 0s, opacity 1s, top 1s;
+}
+.textContainer-hidden {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    top: -100px;
+}
+.textContainer-show {
+    position: relative;
+    visibility: visible;
+    opacity: 1;
+    top: -100px;
+    top: 0;
+}
