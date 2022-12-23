@@ -11,12 +11,17 @@ $grey3-color: #0D0D0D;
 $black-color: black;
 
 //tipography
-$text-small: normal normal normal normal 0.4 'Roboto', sans-serif;
-$text-medium: normal normal normal normal 0.6 'Roboto', sans-serif;
-$text-title-small: normal normal bold normal 0.8 'Roboto', sans-serif;
-$text-title-medium: normal normal bold normal 1em 'Roboto', sans-serif;
-$text-title-big: normal normal bold normal 1.3 'Roboto', sans-serif;
-$text-title-super-big: normal normal bold normal 1.6  'Roboto', sans-serif;
+$text-small: normal normal normal normal 0.8em 'Roboto', sans-serif;
+$text-medium: normal normal normal normal 1em 'Roboto', sans-serif;
+$text-big: normal normal normal normal 1.5em 'Roboto', sans-serif;
+$text-title-small: normal normal bold normal 1em 'Roboto', sans-serif;
+$text-title-medium: normal normal bold normal 2em 'Roboto', sans-serif;
+$text-title-big: normal normal bold normal 3em 'Roboto', sans-serif;
+$text-title-super-big: normal normal bold normal 4em  'Roboto', sans-serif;
 
 
-
+//resposive sizes
+$big-screen: 1200px;
+$medium-screen: 992px;
+$small-screen: 768px;
+$super-small-screen: 576px;
