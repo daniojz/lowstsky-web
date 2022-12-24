@@ -1,9 +1,9 @@
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
-import Home from "./views/home/home";
+import Home from "./pages/Home";
+import TypeBeats from "./pages/TypeBeats/TypeBeats";
 
 import { Route } from "wouter";
-import TypeBeats from "./views/type_beats/TypeBeats";
 
 function App() {
   return (
