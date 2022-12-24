@@ -2,14 +2,14 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "wouter";
 
-export default function Navbar({ showIcon }) {
+export default function Navbar({}) {
   const [t, i18n] = useTranslation();
 
   return (
     <nav>
       <div className="navbar_container">
-        <Link href="/sobre-mi">
-          <a>SOBRE MI</a>
+        <Link href="/home">
+          <a>HOME</a>
         </Link>
         <Link href="/">
           <a>TYPE BEATS</a>
@@ -25,13 +25,6 @@ export default function Navbar({ showIcon }) {
         </Link>
         <Link href="/">
           <a>ARTWORK</a>
-        </Link>
-      </div>
-      <div className={showIcon ? "icon" : "none"}>
-        <Link href="/">
-          <a>
-            <img src="/lowstsky-icon.png"></img>
-          </a>
         </Link>
       </div>
     </nav>
