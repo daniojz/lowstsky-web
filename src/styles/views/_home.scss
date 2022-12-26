@@ -1,123 +1,116 @@
-.homeSection {
+.presentationSection {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .presentationContent {
     width: 100%;
     height: 100vh;
+    padding: 0;
+    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
 
-    .homeSection-icon {
-        width: 300px;
+    .logoContainer {
+      width: 50%;
+      height: 100%;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation-name: opacity-logo-transition;
+      animation-duration: 1s;
+
+      .logoContainer-icon {
+        width: 30%;
+      }
+
+      :hover {
+        cursor: pointer;
+      }
     }
 
-    .homeContainer {
+    .presentationContainer {
+      width: 50%;
+      height: 100vh;
+      display: flex;
+      justify-content: end;
+      align-items: flex-start;
+      flex-direction: column;
+      position: relative;
+      flex-direction: column;
+      text-align: left;
+      transition: visibility 0.4s linear 0s, opacity 0.4s, right 0.7s;
+      background-image: url("https://firebasestorage.googleapis.com/v0/b/lowstsky-web.appspot.com/o/1671796280790.png?alt=media&token=35ee2de5-cf35-4633-9196-53034ab9a3b0");
+      background-size: cover;
+
+      .presentationTextContent {
         width: 100%;
-        height: 100vh;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        color: white;
+        font: $text-small;
+        text-align: justify;
 
-        .homeContent {
-            width: 1000px;
-            position: relative;
-            display: flex;
-            align-items: center;
+        h2, p{
+            padding: 0% 5%;
         }
-        .logoButton {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: justify;
-            transition: left 1.5s;
-            position: absolute;
-
-            :hover {
-                cursor: pointer;
-            }
-        }
-        .logoButton-state2 {
-            left: 0;
-        }
-        .logoButton-state1 {
-            left: 350px;
-        }
-
-        .presentationContainer {
-            width: 45%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            text-align: left;
-            transition: visibility 0.5s linear 0s, opacity 2s, right 1.5s;
-
-            .presentationTextContent {
-                width: 100%;
-                color: white;
-                font: $text-small;
-            }
-            .presentationImgContent {
-                width: 100%;
-
-                img {
-                    width: 100%;
-                }
-            }
-        }
-        .presentationContainer-hidden {
-            position: absolute;
-            visibility: hidden;
-            opacity: 0;
-            right: 350px;
-        }
-        .presentationContainer-show {
-            position: absolute;
-            visibility: visible;
-            opacity: 1;
-            right: 0;
-        }
-    }    
+      }
+    }
+    .presentationContainer-hidden {
+      position: absolute;
+      visibility: hidden;
+      opacity: 0;
+      right: 400px;
+    }
+    .presentationContainer-show {
+      visibility: visible;
+      opacity: 1;
+      right: 0;
+    }
+  }
 }
 
-.lastReleasesSection{
-    background-color: $black-color;
+.lastReleasesSection {
+  background-color: $black-color;
 }
-
 
 @media (max-width: $big-screen) {
-    .homeSection .homeContainer {
-        .homeContent {
-            width: 800px;
-        }
-        .logoButton-state1 {
-            left: 250px;
-        }
-        .presentationContainer-hidden {
-            right: 250px;
-        }
+  .homeSection .homeContainer {
+    .homeContent {
+      width: 800px;
     }
+    .logoButton-state1 {
+      left: 250px;
+    }
+    .presentationContainer-hidden {
+      right: 250px;
+    }
+  }
 }
 
 @media (max-width: $medium-screen) {
-    .homeSection .homeContainer {
-        .homeContent {
-            width: 600px;
-        }
-        .logoButton-state1 {
-            left: 150px;
-        }
-        .presentationContainer-hidden {
-            right: 150px;
-        }
+  .homeSection .homeContainer {
+    .homeContent {
+      width: 600px;
     }
+    .logoButton-state1 {
+      left: 150px;
+    }
+    .presentationContainer-hidden {
+      right: 150px;
+    }
+  }
 }
 
 @media (max-width: $small-screen) {
-
 }
 
 @media (max-width: $super-small-screen) {
-
 }
-  
+
+@keyframes opacity-logo-transition {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
