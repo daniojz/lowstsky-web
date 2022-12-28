@@ -1,19 +1,106 @@
 {
-    "header": {
-        "navbar": {
-            "sobre-mi": "SOBRE MI",
-            "type-beats": "TYPE BEATS",
-            "beats-personalizados": "BEATS PERSONALIZADOS",
-            "mezcla-mastering": "MEZCLA Y MASTERING",
-            "producciones-colabs": "PRODUCCIONES COLABS",
-            "artwork": "ARTWORK"
-        }
-    },
-    "main": {
-        "home_section": {
-        }
-    },
-    "footer": {
+  "commonWords": {
 
+  },
+  "header": {
+    "navbar": {
+      "sobre-mi": "SOBRE MI",
+      "type-beats": "TYPE BEATS",
+      "beats-personalizados": "BEATS PERSONALIZADOS",
+      "mezcla-mastering": "MEZCLA Y MASTERING",
+      "producciones-colabs": "PRODUCCIONES COLABS",
+      "artwork": "ARTWORK"
     }
+  },
+  "main": {
+  },
+  "footer": {
+    "footerBox": {
+      "footerBox1": {
+        "title": "Tienda",
+        "links": [
+          {
+            "linkTitle": "Ver mis beats",
+            "type": "link",
+            "link": ""
+          },
+          {
+            "linkTitle": "Compra mis beats en BeatStars",
+            "type": "external-link",
+            "link": ""
+          },
+          {
+            "linkTitle": "Compra mis beats in BeatStars",
+            "type": "link",
+            "link": ""
+          }
+        ]
+      },
+      "footerBox2": {
+        "title": "Servicios",
+        "links": [
+          {
+            "linkTitle": "Beat Personalizado",
+            "type": "link",
+            "link": ""
+          },
+          {
+            "linkTitle": "Mezcla y masterización",
+            "type": "link",
+            "link": ""
+          },
+          {
+            "linkTitle": "Type Beats",
+            "type": "link",
+            "link": ""
+          }
+        ]
+      },
+      "footerBox3": {
+        "title": "Escucha Mi Musica",
+        "links": [
+          {
+            "linkTitle": "Youtube",
+            "type": "link",
+            "link": ""
+          },
+          {
+            "linkTitle": "SoundCloud",
+            "type": "link",
+            "link": ""
+          },
+          {
+            "linkTitle": "Producciones y colaboraciones",
+            "type": "link",
+            "link": ""
+          },
+          {
+            "linkTitle": "Type Beats",
+            "type": "link",
+            "link": ""
+          }
+        ]
+      },
+      "footerBox4": {
+        "title": "Contact",
+        "links": [
+          {
+            "linkTitle": "Contact",
+            "type": "link",
+            "link": ""
+          },
+          {
+            "linkTitle": "lowstskymusic@gmail.com",
+            "type": "link",
+            "link": ""
+          },
+          {
+            "linkTitle": "Instagram",
+            "type": "link",
+            "link": ""
+          }
+        ]
+      }
+    }
+  }
 }
