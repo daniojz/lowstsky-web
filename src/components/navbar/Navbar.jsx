@@ -3,31 +3,31 @@ import { useTranslation } from "react-i18next";
 import { Link } from "wouter";
 
 const Navbar = ({}) => {
-  const [t, i18n] = useTranslation();
+  const [ t, i18n ] = useTranslation('global');
 
   return (
     <nav>
       <div className="navbar_container">
         <Link href="/home">
-          <a>HOME</a>
+          <a>{t('header.navbar.sobreMi')}</a>
         </Link>
         <Link href="/">
-          <a>TYPE BEATS</a>
+          <a>{t('header.navbar.typeBeats')}</a>
         </Link>
         <Link href="/">
-          <a>BEATS PERSONALIZADOS</a>
+          <a>{t('header.navbar.beatsPersonalizados')}</a>
         </Link>
         <Link href="/">
-          <a>MEZCLA Y MASTERING</a>
+          <a>{t('header.navbar.mezclaMastering')}</a>
         </Link>
         <Link href="/">
-          <a>PRODUCCIONES/COLABS</a>
+          <a>{t('header.navbar.produccionesColabs')}</a>
         </Link>
         <Link href="/">
-          <a>ARTWORK</a>
+          <a>{t('header.navbar.artwork')}</a>
         </Link>
         <Link href="/">
-          <a>CONTACT</a>
+          <a>{t('header.navbar.contact')}</a>
         </Link>
       </div>
     </nav>
