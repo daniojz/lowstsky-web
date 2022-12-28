@@ -16,7 +16,9 @@ function App() {
         <Route path="/home" component={Home} />
         <Route path="/type-beats" component={TypeBeats} />
       </main>
-      <Route path="/sobre-mi" component={Footer}></Route>
+      <footer>
+        <Footer></Footer>
+      </footer>
     </div>
   );
 }

@@ -2,7 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "wouter";
 
-export default function Navbar({}) {
+const Navbar = ({}) => {
   const [t, i18n] = useTranslation();
 
   return (
@@ -26,7 +26,12 @@ export default function Navbar({}) {
         <Link href="/">
           <a>ARTWORK</a>
         </Link>
+        <Link href="/">
+          <a>CONTACT</a>
+        </Link>
       </div>
     </nav>
   );
 }
+
+export default Navbar

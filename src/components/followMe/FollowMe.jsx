@@ -1,32 +1,46 @@
 import React from "react";
 import { Icon } from "@iconify/react";
 
-const FollowMe = ({}) => {
+const FollowMe = ({color}) => {
+  let colorClass = "grey"
+
+  switch (color) {
+    case 'white':
+      colorClass = "white"
+      break;
+    case 'black':
+      colorClass = "black"
+      break;
+    case 'grey':
+      colorClass = "grey"
+      break;        
+  }
+
   return (
-    <div className="followMe_container">
+    <div className={`followMeContainer ${colorClass}`}>
       <span>
         <a href="">
-          <Icon icon="akar-icons:github-fill" width="25" height="25" />
+          <Icon icon="akar-icons:github-fill" width="20" height="20" />
         </a>
       </span>
       <span>
         <a href="">
-          <Icon icon="akar-icons:instagram-fill" width="25" height="25" />
+          <Icon icon="akar-icons:instagram-fill" width="20" height="20" />
         </a>
       </span>
       <span>
         <a href="">
-          <Icon icon="akar-icons:twitter-fill" width="25" height="25" />
+          <Icon icon="akar-icons:twitter-fill" width="20" height="20" />
         </a>
       </span>
       <span>
         <a href="">
-          <Icon icon="akar-icons:soundcloud-fill" width="25" height="25" />
+          <Icon icon="akar-icons:soundcloud-fill" width="20" height="20" />
         </a>
       </span>
       <span>
         <a href="">
-          <Icon icon="akar-icons:youtube-fill" width="25" height="25" />
+          <Icon icon="akar-icons:youtube-fill" width="20" height="20" />
         </a>
       </span>
     </div>
