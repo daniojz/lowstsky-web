@@ -1,6 +1,5 @@
 .presentationSection {
   width: 100%;
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,8 +7,6 @@
   .presentationContent {
     width: 100%;
     height: 100vh;
-    padding: 0;
-    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -84,8 +81,52 @@
   }
 }
 
+.promoSection{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .promoContent {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $black-color;
+
+  }
+  .promoBoxContainer {
+    width: 16%;
+    height: 55%;
+    margin: 2%;
+    padding: 2%;
+    background-color: rgba(128, 128, 128, 0.156);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    color: $white-color;
+    text-align: center;
+    font: $text-title-small;
+  }
+  .promoBoxContainer:hover{
+    cursor: pointer;
+    background-color: rgba(128, 128, 128, 0.448);
+  }
+}
+
 .lastReleasesSection {
   background-color: $black-color;
+
+  .lastReleasesContent {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $black-color;
+  }
 }
 
 @media (max-width: $big-screen) {

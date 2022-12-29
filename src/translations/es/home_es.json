@@ -1,0 +1,28 @@
+{
+  "presentation": {
+    "presentationText": {
+        "greeting": "Hola!",
+        "presentationMessage": ""
+    },
+    "mail": "lowstskymusic@gmail.com",
+    "direction": "Pantoja, Toledo, Castilla-La Mancha"
+  },
+  "promotion": {
+    "promoBox1": {
+        "title": "Compra mis beats",
+        "imgUrl": "",
+        "pageUrl": "/typeBeats"
+    },
+    "promoBox2": {
+        "title": "Escucha mis trabajos con artistas",
+        "imgUrl": "",
+        "pageUrl": "/"
+    },
+    "promoBox3": {
+        "title": "¿Quieres un beat personalizado?",
+        "imgUrl": "",
+        "pageUrl": "/"
+    }
+  },
+  "lastReleases": {}
+}

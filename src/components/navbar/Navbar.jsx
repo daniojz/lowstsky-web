@@ -11,7 +11,7 @@ const Navbar = ({}) => {
         <Link href="/home">
           <a>{t('header.navbar.sobreMi')}</a>
         </Link>
-        <Link href="/">
+        <Link href="/typeBeats">
           <a>{t('header.navbar.typeBeats')}</a>
         </Link>
         <Link href="/">

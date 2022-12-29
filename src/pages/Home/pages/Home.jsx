@@ -1,5 +1,6 @@
 import { React, useState } from "react";
-import Presentation from "../components/Presentation/Presentation";
+import Presentation from "../views/Presentation/Presentation";
+import Promotion from "../views/Promotion/Promotion";
 
 const Home = ({}) => {
   return (
@@ -9,7 +10,11 @@ const Home = ({}) => {
           <Presentation></Presentation>
         </div>
       </section>
-      <section className="lastReleasesSection"></section>
+      <section className="promoSection">
+        <div className="promoContent">
+          <Promotion></Promotion>
+        </div>
+      </section>
       <section className="lastReleasesSection"></section>
     </>
   );
