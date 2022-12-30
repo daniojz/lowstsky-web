@@ -10,38 +10,55 @@ nav {
     color: black;
     z-index: 100;
 
-    .navbar_container {
+    .navbarContainer {
         width: 80%;
         display: flex;
         justify-content: space-around;
+        transition: opacity 1s;
+
         a {
             margin: 0 20px;
             font: $text-title-small;
             color: $grey1-color;
             text-decoration: none;
             text-align: center;
+
             &:hover {
                 color: $white-color;
             }
         }
     }
-    
-    .icon {
-        width: 10%;
-        display: flex;
-        justify-content: right;
-        a {
-            margin-right: 45px;
-
-            img {
-                width: 100px;
-            }
-        }
-    }
-
-    .none {
+    .navbarShowButton{
         display: none;
     }
 }
 
+.navbarHidden {
+    display: flex;
+    justify-content: flex-end;
+
+    .navbarContainer {
+        opacity: 0;
+        position: relative;
+        top: -100px;
+    }
+    .navbarShowButton{
+        width: 10%;
+        display: flex;
+        justify-content: center;
+        font: $text-title-big;
+
+        button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: $grey1-color;
+            cursor: pointer;
+            background-color: transparent;
+        }
+        button:hover {
+            color: $white-color;
+        }
+    }
+}
 
