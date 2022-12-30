@@ -7,14 +7,19 @@ import { Icon } from "@iconify/react";
 const Navbar = ({}) => {
   const [ t, i18n ] = useTranslation('global');
   const [hidden, setHidden] = useState(false);
-  let scrollY = 0;
+  const [background, setBackground] = useState(false);
 
   useEffect(() => {
     const handleScroll = event => {
-      window.scrollY>screen.height-86 ? setHidden(true) : setHidden(false)
-      scrollY = window.scrollY;
+      if(window.scrollY>screen.height-86){
+        setBackground(true)
+        setHidden(true)
+      } else {
+        setBackground(false)
+        setHidden(false)
+      }
     };
-
+    console.log(background)
     window.addEventListener('scroll', handleScroll);
 
     return () => {
@@ -27,7 +32,7 @@ const Navbar = ({}) => {
   };
 
   return (
-    <nav className={`${hidden==true ? 'navbarHidden' : ''}`}>
+    <nav id="navbar" className={`${hidden==true ? 'navbarHidden' : ''} ${background==true ? 'backgroundNavbar' : ''}`}>
       <div className={`navbarContainer`}>
         <Link href="/home">
           <a>{t('header.navbar.sobreMi')}</a>
