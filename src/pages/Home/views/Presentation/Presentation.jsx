@@ -9,7 +9,7 @@ const Presentation = ({}) => {
   };
 
   return (
-    <>
+    <div className="presentationContent">
       <div className={`logoContainer`}>
         <img onClick={logoButtonClickHandler} className="logoContainer-icon" src="/lowstsky-icon.png"></img>
       </div>
@@ -54,7 +54,7 @@ const Presentation = ({}) => {
             <FollowMe color="white"></FollowMe>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
