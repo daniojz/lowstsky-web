@@ -12,6 +12,7 @@ const LastReleases = ({}) => {
         <SongCover imgUrl={t('lastReleases.songCover1.imgUrl')} pageUrl={t('lastReleases.songCover1.pageUrl')}></SongCover>
         <SongCover imgUrl={t('lastReleases.songCover2.imgUrl')} pageUrl={t('lastReleases.songCover2.pageUrl')}></SongCover>
         <SongCover imgUrl={t('lastReleases.songCover3.imgUrl')} pageUrl={t('lastReleases.songCover3.pageUrl')}></SongCover>
+        <SongCover imgUrl={t('lastReleases.songCover3.imgUrl')} pageUrl={t('lastReleases.songCover4.pageUrl')}></SongCover>
       </div>
     </div>
   );

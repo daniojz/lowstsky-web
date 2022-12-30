@@ -25,7 +25,7 @@
     }
   },
   "lastReleases": {
-    "title": "Ultimos Lanzamientos",
+    "title": "ULTIMOS LANZAMIENTOS",
     "songCover1": {
       "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lowstsky-web.appspot.com/o/astral_v3.png?alt=media&token=073987be-f7bb-44a8-ab5c-986c7634fd6e",
       "pageUrl": "/home"
@@ -35,6 +35,10 @@
       "pageUrl": "/"
     },
     "songCover3": {
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lowstsky-web.appspot.com/o/becouse%20you%20-%20portada.jpg?alt=media&token=304905aa-a4c3-4126-9958-eccadf87253b",
+      "pageUrl": "/"
+    },
+    "songCover4": {
       "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lowstsky-web.appspot.com/o/becouse%20you%20-%20portada.jpg?alt=media&token=304905aa-a4c3-4126-9958-eccadf87253b",
       "pageUrl": "/"
     }
