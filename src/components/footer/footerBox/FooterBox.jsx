@@ -16,7 +16,7 @@ const FooterBox = ({title, links}) => {
 
 const renderLinks = (links) => {
   return links.map((link) => {
-    return <li key={link}><a href={link.link}>{link.linkTitle}</a></li>
+    return <li key={link.linkTitle}><a href={link.link}>{link.linkTitle}</a></li>
   });
 }
 

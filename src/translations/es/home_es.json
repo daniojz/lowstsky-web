@@ -1,28 +1,42 @@
 {
   "presentation": {
     "presentationText": {
-        "greeting": "Hola!",
-        "presentationMessage": ""
+      "greeting": "Hola!",
+      "presentationMessage": ""
     },
     "mail": "lowstskymusic@gmail.com",
     "direction": "Pantoja, Toledo, Castilla-La Mancha"
   },
   "promotion": {
     "promoBox1": {
-        "title": "Compra mis beats",
-        "imgUrl": "",
-        "pageUrl": "/typeBeats"
+      "title": "Compra mis beats",
+      "imgUrl": "",
+      "pageUrl": "/typeBeats"
     },
     "promoBox2": {
-        "title": "Escucha mis trabajos con artistas",
-        "imgUrl": "",
-        "pageUrl": "/"
+      "title": "Escucha mis trabajos con artistas",
+      "imgUrl": "",
+      "pageUrl": "/"
     },
     "promoBox3": {
-        "title": "¿Quieres un beat personalizado?",
-        "imgUrl": "",
-        "pageUrl": "/"
+      "title": "¿Quieres un beat personalizado?",
+      "imgUrl": "",
+      "pageUrl": "/"
     }
   },
-  "lastReleases": {}
+  "lastReleases": {
+    "title": "Ultimos Lanzamientos",
+    "songCover1": {
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lowstsky-web.appspot.com/o/astral_v3.png?alt=media&token=073987be-f7bb-44a8-ab5c-986c7634fd6e",
+      "pageUrl": "/home"
+    },
+    "songCover2": {
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lowstsky-web.appspot.com/o/darkest%20sky.jpg?alt=media&token=b9f0ff4c-4c18-4068-ba33-580b1c24d3f5",
+      "pageUrl": "/"
+    },
+    "songCover3": {
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/lowstsky-web.appspot.com/o/becouse%20you%20-%20portada.jpg?alt=media&token=304905aa-a4c3-4126-9958-eccadf87253b",
+      "pageUrl": "/"
+    }
+  }
 }
