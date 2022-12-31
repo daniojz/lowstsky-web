@@ -1,7 +1,10 @@
 import { React, useState } from "react";
+import { useTranslation } from "react-i18next";
 import FollowMe from "../../../../components/FollowMe/FollowMe";
+import ScrollDownButton from "../../../../components/ScrollDownButton/ScrollDownButton";
 
 const Presentation = ({}) => {
+  const [ t, i18n ] = useTranslation(['global', 'home']);
   const [animationState, setAnimationState] = useState(1);
 
   const logoButtonClickHandler = () => {
@@ -15,38 +18,15 @@ const Presentation = ({}) => {
       </div>
       <div className={`presentationContainer ${animationState === 1 ? "presentationContainer-hidden" : "presentationContainer-show"}`}>
         <div className="presentationTextContent">
-          <h2>Hola!</h2>
+          <h2>{t('presentation.presentationText.greeting', { ns: 'home' })}</h2>
           <br></br>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident
-            qui officiis totam ea. Vel, omnis ad quas atque rerum vitae, cum sit
-            animi modi earum minus recusandae esse officiis odit? /n
-            asodfjasodifj Lorem ipsum dolor sit amet, consectetur adipisicing
-            elit. Provident qui officiis totam ea. Vel, omnis ad quas atque
-            rerum vitae, cum sit animi modi earum minus recusandae esse officiis
-            odit? /n asodfjasodifj 
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident
-            qui officiis totam ea. Vel, omnis ad quas atque rerum vitae, cum sit
-            animi modi earum minus recusandae esse officiis odit? /n
-            asodfjasodifj Lorem ipsum dolor sit amet, consectetur adipisicing
-            elit. Provident qui officiis totam ea. Vel, omnis ad quas atque
-            rerum vitae, cum sit animi modi earum minus recusandae esse officiis
-            odit? /n asodfjasodifj
-          </p>
+          <p>{t('presentation.presentationText.presentationMessage', { ns: 'home' })}</p>
           <br></br>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident
-            qui officiis totam ea. Vel, omnis ad quas atque rerum vitae, cum sit
-            animi modi earum minus recusandae esse officiis odit? /n
-            asodfjasodifj Lorem ipsum dolor sit amet, consectetur adipisicing
-            elit. Provident qui officiis totam ea. Vel, omnis ad quas atque
-            rerum vitae, cum sit animi modi earum minus recusandae esse officiis
-            odit? /n asodfjasodifj
-          </p>
+          <p>{t('presentation.presentationText.presentationMessage', { ns: 'home' })}</p>
         </div>
         <div className="presentationContactContent">
           <br></br>
-          <p>lowstskymusic@gmail.com</p>
+          <p>{t('contact.email.link')}</p>
           <p>Pantoja, Toledo, Castilla-La Mancha</p>
           <br></br>
         </div>
@@ -54,6 +34,7 @@ const Presentation = ({}) => {
             <FollowMe color="white"></FollowMe>
         </div>
       </div>
+      <ScrollDownButton anchor="#promo"></ScrollDownButton>
     </div>
   );
 };

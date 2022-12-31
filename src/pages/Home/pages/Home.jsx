@@ -6,13 +6,13 @@ import LastReleases from "../views/LastReleases/LastReleases";
 const Home = ({}) => {
   return (
     <>
-      <section className="presentationSection">
+      <section id="presentation" className="presentationSection">
         <Presentation></Presentation>
       </section>
-      <section className="promoSection">
+      <section id="promo" className="promoSection">
         <Promotion></Promotion>
       </section>
-      <section className="lastReleasesSection">
+      <section id="lastReleases" className="lastReleasesSection">
         <LastReleases></LastReleases>
       </section>
     </>

@@ -2,8 +2,31 @@
   "commonWords": {
 
   },
-  "socialNetworks": {
-
+  "contact": {
+    "email": {
+      "name": "lowstsky",
+      "link": "lowstskymusic@gmail.com"
+    },
+    "instagram": {
+      "name": "@lowstsky",
+      "link": "https://www.instagram.com/lowstsky/"
+    },
+    "youtube": {
+      "name": "lowstsky",
+      "link": "https://www.youtube.com/@lowstsky"
+    },
+    "soundcloud": {
+      "name": "lowstsky",
+      "link": "https://www.youtube.com/@lowstsky"
+    },
+    "twitter": {
+      "name": "dani",
+      "link": "https://twitter.com/danioj24"
+    },
+    "github": {
+      "name": "daniojz",
+      "link": "https://github.com/daniojz/lowstsky-web"
+    }
   },
   "header": {
     "navbar": {
