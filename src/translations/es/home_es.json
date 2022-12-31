@@ -2,10 +2,8 @@
   "presentation": {
     "presentationText": {
       "greeting": "Hola!",
-      "presentationMessage": ""
-    },
-    "mail": "lowstskymusic@gmail.com",
-    "direction": "Pantoja, Toledo, Castilla-La Mancha"
+      "presentationMessage": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos obcaecati, rem beatae magni fugiat impedit perferendis inventore aliquam repudiandae quos tempore sed eveniet velit unde quas molestias enim nisi aut! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos obcaecati, rem beatae magni fugiat impedit perferendis inventore aliquam repudiandae quos tempore sed eveniet velit unde quas molestias enim nisi aut!"
+    }
   },
   "promotion": {
     "promoBox1": {

@@ -11,15 +11,9 @@ const Navbar = ({}) => {
 
   useEffect(() => {
     const handleScroll = event => {
-      if(window.scrollY>screen.height-86){
-        setBackground(true)
-        setHidden(true)
-      } else {
-        setBackground(false)
-        setHidden(false)
-      }
+      window.scrollY>screen.height-400 ? setHidden(true) : setHidden(false)
+      window.scrollY==0 ? setBackground(false) : setBackground(true)
     };
-    console.log(background)
     window.addEventListener('scroll', handleScroll);
 
     return () => {
