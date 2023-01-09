@@ -1,7 +1,46 @@
-.typeBeats_section {
+.typeBeatsHeaderSection {
     width: 100%;
-    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: $black-color;
+
+    .typeBeatsHeaderContent {
+      width: 100%;
+      height: 70vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 }
+.typeBeatsListSection {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $grey2-color;
+
+    .typeBeatsListContent {
+        width: 100%;
+        height: 200vh;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        flex-direction: column;
+
+      .typeBeatsList {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: minmax(100px, auto);
+        gap: 100px;
+        
+        .beatCardContainer {
+          width: 300px;
+          border: 1px black;
+          background-color: black;
+          color: white;
+        }
+      }
+    }
+}
+
