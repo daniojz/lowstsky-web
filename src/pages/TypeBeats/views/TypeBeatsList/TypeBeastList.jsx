@@ -24,7 +24,7 @@ const TypeBeatsList = ({fetching, typeBeats, error, onRequestTypeBeats}) => {
         <button></button>
       </div>
       <div className="typeBeatsList">
-        {typeBeats!=null ? typeBeats.map(beat => renderBeat(beat)) : "A ocurrido un error"}
+        {typeBeats!=null ? typeBeats.map(beat => renderBeat(beat.data())) : "A ocurrido un error"}
       </div>
   </div>
   );

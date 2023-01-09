@@ -6,14 +6,13 @@ const CALL_FAILURE = "CALL_FAILURE";
 // reducer with initial state
 const initialState = {
   fetching: false,
-  typeBeats: null,
+  typeBeats: [],
   error: null
 };
 
 export function addTypeBeat(state = initialState, action) {
   switch (action.type) {
     case CALL_REQUEST:
-      console.log("hola")
       return { ...state, fetching: true, error: null };
     case CALL_SUCCESS:
       return { ...state, fetching: false, typeBeats: action.typeBeats };

@@ -16,9 +16,7 @@ export function* watchTypeBeatsSaga() {
 // function that makes the api request and returns a Promise for response
 async function getAllTypeBeats() {
     const querySnapshot = await getDocs(collection(db, "typeBeats"));
-    querySnapshot.forEach((doc) => {
-      console.log(`${doc.id} => ${doc.data()}`);
-    });
+    console.log(querySnapshot.docs)
     return querySnapshot.docs
 }
 async function addTypeBeat() {
@@ -43,7 +41,7 @@ function* onRequestTypeBeats() {
   try {
     console.log("heyBien")
     const response = yield call(getAllTypeBeats);
-    const typeBeats = response.data.message;
+    const typeBeats = response
     console.log(typeBeats)
     // dispatch a success action to the store with the new dog
     yield put({ type: "CALL_SUCCESS", typeBeats });
@@ -52,6 +50,6 @@ function* onRequestTypeBeats() {
     // dispatch a failure action to the store with the error
     console.log("heyError")
 
-    yield put({ type: "CALL_FAILURE", error });
+    yield put({ type: "CALL_FAILURE", error});
   }
 }
