@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 const TypeBeatsList = ({fetching, typeBeats, error, onRequestTypeBeats}) => {
   const [ t, i18n ] = useTranslation('typesBeats');
   useEffect(() => {
-    onRequestTypeBeats
+    onRequestTypeBeats()
   }, [])
   
   const renderBeat = (beat) => {
