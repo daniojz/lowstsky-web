@@ -1,5 +1,6 @@
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
+import Loading from "./components/Loading/Loading";
 import Home from "./pages/Home";
 import TypeBeats from "./pages/TypeBeats";
 import { Route } from "wouter";
@@ -22,6 +23,7 @@ function App() {
           <Navbar></Navbar>
         </header>
         <main>
+          <Loading></Loading>
           <Route path="/" component={Home} />
           <Route path="/home" component={Home} />
           <Route path="/typeBeats" component={TypeBeats} />

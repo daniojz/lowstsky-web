@@ -22,25 +22,58 @@
 
     .typeBeatsListContent {
         width: 100%;
-        height: 200vh;
+        height: fit-content;
+        padding: 5%;
         display: flex;
         justify-content: start;
         align-items: center;
         flex-direction: column;
 
+      .typeBeatsButtons{
+        width: 100%;
+        margin: 10px;
+        display: flex;
+        justify-content: end;
+
+        .typeBeatButtonView {
+          width: 45px;
+          height: 30px;
+          margin: 0 10px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border:none;
+          border-radius: 1px;
+          background-color: $grey1-transparent-color;
+          color: $grey1-color;
+        }
+        .typeBeatButtonView:hover {
+          cursor: pointer;
+          background-color: $grey3-transparent-color;
+          color: white;
+        }
+      }
       .typeBeatsList {
+        position: relative;
+        width: 100%;
+        margin: 5%;
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
         grid-auto-rows: minmax(100px, auto);
         gap: 100px;
         
         .beatCardContainer {
-          width: 300px;
+          height: 100%;
+          padding: 5%;
           border: 1px black;
-          background-color: black;
+          border-radius: 10px;
+          background-color: $grey3-transparent-color;
           color: white;
+        }
+        .beatCardContainer:hover {
+          background-color: $grey1-transparent-color;
+          cursor: pointer;
         }
       }
     }
 }
-

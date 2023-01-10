@@ -16,7 +16,6 @@ export function* watchTypeBeatsSaga() {
 // function that makes the api request and returns a Promise for response
 async function getAllTypeBeats() {
     const querySnapshot = await getDocs(collection(db, "typeBeats"));
-    console.log(querySnapshot.docs)
     return querySnapshot.docs
 }
 async function addTypeBeat() {
@@ -26,7 +25,6 @@ async function addTypeBeat() {
             genre: "Lovelace",
             bpm: 120
         });
-        console.log("Document written with ID: ", docRef);
         return docRef
     } catch (e) {
         console.error("Error adding document: ", e);
@@ -42,14 +40,11 @@ function* onRequestTypeBeats() {
     console.log("heyBien")
     const response = yield call(getAllTypeBeats);
     const typeBeats = response
-    console.log(typeBeats)
     // dispatch a success action to the store with the new dog
     yield put({ type: "CALL_SUCCESS", typeBeats });
   
   } catch (error) {
     // dispatch a failure action to the store with the error
-    console.log("heyError")
-
     yield put({ type: "CALL_FAILURE", error});
   }
 }

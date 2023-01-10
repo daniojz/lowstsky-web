@@ -1,8 +1,6 @@
 import React from "react";
-import PropTypes from 'prop-types'
-import BeatCard from "../components/BeatCard/BeatCard";
 import Header from "../views/Header/Header";
-import TypeBeatsList from "../views/TypeBeatsList/TypeBeastList"
+import TypeBeatsList from "../views/TypeBeatsList/TypeBeatsList"
 
 const TypeBeats = ({}) => {
   return (
