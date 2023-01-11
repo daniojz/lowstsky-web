@@ -16,7 +16,7 @@ const Loading = ({fetching}) => {
 
 const mapStateToProps = state => {
   return {
-    fetching: state.addTypeBeat.fetching,
+    fetching: state.typeBeats.fetching,
   };
 };
 

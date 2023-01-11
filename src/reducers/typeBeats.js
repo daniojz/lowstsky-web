@@ -10,7 +10,7 @@ const initialState = {
   error: null
 };
 
-export function addTypeBeat(state = initialState, action) {
+export function typeBeats(state = initialState, action) {
   switch (action.type) {
     case CALL_REQUEST:
       return { ...state, fetching: true, error: null };

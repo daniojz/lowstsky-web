@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
-import { addTypeBeat } from "./addTypeBeat";
+import { typeBeats } from "./typeBeats";
 
 const rootReducer = combineReducers({
-    addTypeBeat : addTypeBeat,
+    typeBeats : typeBeats,
  })
  
  export default rootReducer

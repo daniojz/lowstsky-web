@@ -37,7 +37,6 @@ async function deleteTypeBeat() {
 // worker saga: makes the api call when watcher saga sees the action
 function* onRequestTypeBeats() {
   try {
-    console.log("heyBien")
     const response = yield call(getAllTypeBeats);
     const typeBeats = response
     // dispatch a success action to the store with the new dog

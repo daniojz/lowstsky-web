@@ -1,8 +1,3 @@
-import Navbar from "./components/navbar/Navbar";
-import Footer from "./components/footer/Footer";
-import Loading from "./components/Loading/Loading";
-import Home from "./pages/Home";
-import TypeBeats from "./pages/TypeBeats";
 import { Route } from "wouter";
 import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
@@ -10,6 +5,12 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import createSagaMiddleware from "redux-saga";
 import rootSaga from "./sagas/typeBeatsSaga";
 import rootReducer from "./reducers";
+import Navbar from "./components/navbar/Navbar";
+import Footer from "./components/footer/Footer";
+import Loading from "./components/Loading/Loading";
+import Home from "./pages/Home";
+import TypeBeats from "./pages/TypeBeats";
+import AddTypeBeat from "./pages/TypeBeats/pages/AddTypeBeat";
 
 const sagaMiddleware = createSagaMiddleware();
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(sagaMiddleware)))
@@ -27,6 +28,7 @@ function App() {
           <Route path="/" component={Home} />
           <Route path="/home" component={Home} />
           <Route path="/typeBeats" component={TypeBeats} />
+          <Route path="/typeBeats/addTypeBeat" component={AddTypeBeat} />
         </main>
         <footer>
           <Footer></Footer>
