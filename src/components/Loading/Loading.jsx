@@ -2,10 +2,10 @@ import React, { useEffect } from "react";
 import { Icon } from "@iconify/react";
 import { connect } from "react-redux";
 
-const Loading = ({fetching}) => { 
+const Loading = ({loading}) => { 
   return (
     <>
-      <div className={`loadingContainer ${fetching ? "show" : "hidden"}`}>
+      <div className={`loadingContainer ${loading ? "show" : "hidden"}`}>
         <span className="loadingIcon">
           <Icon icon="akar-icons:arrow-clockwise" width="30"></Icon>
         </span>
@@ -16,7 +16,7 @@ const Loading = ({fetching}) => {
 
 const mapStateToProps = state => {
   return {
-    fetching: state.typeBeats.fetching,
+    loading: state.typeBeats.loading,
   };
 };
 

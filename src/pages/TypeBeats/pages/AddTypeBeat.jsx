@@ -1,6 +1,7 @@
 import React from 'react';
 import { withTranslation } from 'react-i18next';
 import BeatCard from "../../../components/BeatCard/BeatCard";
+import { connect } from "react-redux";
 
 class AddTypeBeat extends React.Component {
     constructor(props) {
@@ -12,8 +13,8 @@ class AddTypeBeat extends React.Component {
         price: "",
         description: ""
       };
-  
       this.handleChange = this.handleChange.bind(this);
+      this.handleSubmit = this.handleSubmit.bind(this);
     }
   
     handleChange(event) {
@@ -24,11 +25,12 @@ class AddTypeBeat extends React.Component {
       this.setState({
         [name]: value
       });
-      console.log(this.state)
     }
 
     handleSubmit(event){
-        console.log(this.state)
+        console.log("hey")
+        this.props.addTypeBeat()
+        event.preventDefault();
     }
 
     render() {
@@ -58,7 +60,7 @@ class AddTypeBeat extends React.Component {
                         <span>{this.props.t('commonWords.description')}</span>
                         <textarea defaultValue={this.state.description} name='description' onChange={this.handleChange} />
                     </label>
-                    <input type="submit" value="Submit"/>
+                    <input type="submit" value="Submit" onClick={this.handleSubmit}/>
                 </form>
             </div>
             <div className="typeBeatImage">
@@ -69,4 +71,18 @@ class AddTypeBeat extends React.Component {
     }
 }
 
-export default withTranslation('global')(AddTypeBeat)
+const mapStateToProps = state => {
+    return {
+      loading: state.typeBeats.loading,
+      typeBeats: state.typeBeats.typeBeats,
+      error: state.typeBeats.error
+    };
+  };
+  
+const mapDispatchToProps = dispatch => {
+    return {
+        addTypeBeat: () => dispatch({ type: "PUT_TYPEBEAT" }),
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(withTranslation('global')(AddTypeBeat))

@@ -5,11 +5,11 @@ import BeatCard from "../../../../components/BeatCard/BeatCard";
 import { connect } from "react-redux";
 import { Link } from "wouter";
 
-const TypeBeats = ({fetching, typeBeats, error, onRequestTypeBeats}) => {
+const TypeBeats = ({loading, typeBeats, error, getAllTypeBeats}) => {
   const [ t, i18n ] = useTranslation('typesBeats');
  
   useEffect(() => {
-    onRequestTypeBeats()
+    getAllTypeBeats()
   }, [])
   
   const renderBeat = (beat, key) => {
@@ -24,7 +24,7 @@ const TypeBeats = ({fetching, typeBeats, error, onRequestTypeBeats}) => {
       <div className="typeBeatsListContent">
         <div className="typeBeatsButtons">
           <button className="typeBeatButtonView"><Icon icon="akar-icons:sort"></Icon></button>
-          <button className="typeBeatButtonAdd" ><Link href="/typeBeats/addTypeBeat" className="active"><Icon icon="akar-icons:circle-plus-fill"></Icon></Link></button>
+          <Link href="/typeBeats/addTypeBeat" className="active"><button className="typeBeatButtonAdd" ><Icon icon="akar-icons:circle-plus-fill"></Icon></button></Link>
         </div>
         <div className="typeBeatsList">
           {typeBeats!=null ? typeBeats.map(beat => renderBeat(beat.data(), beat.id)) : "A ocurrido un error"}
@@ -36,7 +36,7 @@ const TypeBeats = ({fetching, typeBeats, error, onRequestTypeBeats}) => {
 
 const mapStateToProps = state => {
   return {
-    fetching: state.typeBeats.fetching,
+    loading: state.typeBeats.loading,
     typeBeats: state.typeBeats.typeBeats,
     error: state.typeBeats.error
   };
@@ -44,7 +44,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onRequestTypeBeats: () => dispatch({ type: "CALL_REQUEST" })
+    getAllTypeBeats: () => dispatch({ type: "GET_TYPEBEATS" }),
+    addTypeBeat: () => dispatch({ type: "PUT_TYPEBEAT" }),
+    deleteTypeBeat: () => dispatch({ type: "DELETE_TYPEBEAT" })
   };
 };
 

@@ -9,6 +9,7 @@
     .addTypeBeatFormContainer{
         width: 40%;
         height: 80%;
+        padding: 5%;
         border-radius: 10px;
         color: $white-color;
         font: $text-medium;
@@ -25,15 +26,14 @@
             justify-content: space-between;
             align-items: center;
             border-radius: 10px;
-            background-color: $grey1-transparent-color;
-        }
-        span {
-            margin: 0 4%;
         }
     }
     .typeBeatImage{
         width: 50%;
         height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
 

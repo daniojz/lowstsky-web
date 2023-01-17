@@ -10,7 +10,31 @@ export default function* rootSaga() {
 
 // watcher saga: watches for actions dispatched to the store, starts worker saga
 export function* watchTypeBeatsSaga() {
-  yield takeEvery("CALL_REQUEST", onRequestTypeBeats);
+  yield takeEvery("GET_TYPEBEATS", getTypeBeats);
+  yield takeEvery("PUT_TYPEBEAT", putTypeBeat);
+}
+
+// worker saga: makes the api call when watcher saga sees the action
+function* getTypeBeats() {
+  try {
+    const response = yield call(getAllTypeBeats);
+    const typeBeats = response
+    yield put({ type: "CALL_SUCCESS", typeBeats });
+
+  } catch (error) {
+    yield put({ type: "CALL_FAILURE", error});
+  }
+}
+
+function* putTypeBeat() {
+  try {
+    const response = yield call(addTypeBeat);
+    const typeBeatAdded = response
+    yield put({ type: "CALL_SUCCESS", typeBeatAdded });
+  
+  } catch (error) {
+    yield put({ type: "CALL_FAILURE", error});
+  }
 }
 
 // function that makes the api request and returns a Promise for response
@@ -21,9 +45,11 @@ async function getAllTypeBeats() {
 async function addTypeBeat() {
     try {
         const docRef = await addDoc(collection(db, "typeBeats"), {
-            title: "Ada",
-            genre: "Lovelace",
-            bpm: 120
+          title: "",
+          bpm: "",
+          key: "",
+          price: "",
+          description: ""
         });
         return docRef
     } catch (e) {
@@ -34,16 +60,3 @@ async function deleteTypeBeat() {
 
 }
 
-// worker saga: makes the api call when watcher saga sees the action
-function* onRequestTypeBeats() {
-  try {
-    const response = yield call(getAllTypeBeats);
-    const typeBeats = response
-    // dispatch a success action to the store with the new dog
-    yield put({ type: "CALL_SUCCESS", typeBeats });
-  
-  } catch (error) {
-    // dispatch a failure action to the store with the error
-    yield put({ type: "CALL_FAILURE", error});
-  }
-}
