@@ -5,7 +5,7 @@ import BeatCard from "../../../../components/BeatCard/BeatCard";
 import { connect } from "react-redux";
 import { Link } from "wouter";
 
-const TypeBeats = ({loading, typeBeats, error, getAllTypeBeats}) => {
+const TypeBeats = ({typeBeats, error, getAllTypeBeats}) => {
   const [ t, i18n ] = useTranslation('typesBeats');
  
   useEffect(() => {

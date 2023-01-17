@@ -1,6 +1,6 @@
 // action types
 const GET_TYPEBEATS = "CALL_REQUEST";
-const PUT_TYPEBEAT = "CALL_PUT";
+const PUT_TYPEBEAT = "PUT_TYPEBEAT";
 const DELETE_TYPEBEAT = "CALL_DELETE";
 const PUT_SUCCESS = "PUT_SUCCESS";
 const PUT_FAILURE = "PUT_FAILURE";
@@ -19,8 +19,8 @@ export function typeBeats(state = initialState, action) {
   switch (action.type) {
     case GET_TYPEBEATS:
       return { ...state, loading: true, error: null };
-    case PUT_TYPEBEAT:
-      return { ...state, loading: true, typeBeats: action.typeBeats };
+    case PUT_TYPEBEAT: 
+      return { ...state, loading: true, error: null };
     case PUT_SUCCESS:
       return { ...state, loading: false, typeBeatAdded: action.typeBeatAdded };
     case PUT_FAILURE:

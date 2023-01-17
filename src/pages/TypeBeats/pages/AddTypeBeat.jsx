@@ -2,6 +2,7 @@ import React from 'react';
 import { withTranslation } from 'react-i18next';
 import BeatCard from "../../../components/BeatCard/BeatCard";
 import { connect } from "react-redux";
+import { Redirect } from "wouter";
 
 class AddTypeBeat extends React.Component {
     constructor(props) {
@@ -28,8 +29,9 @@ class AddTypeBeat extends React.Component {
     }
 
     handleSubmit(event){
-        console.log("hey")
-        this.props.addTypeBeat()
+        this.props.addTypeBeat(this.state)
+        console.log(this.props.typeBeatAdded)
+        if (this.props.typeBeatAdded!=null) {<Redirect to="/typeBeats" />}
         event.preventDefault();
     }
 
@@ -74,14 +76,14 @@ class AddTypeBeat extends React.Component {
 const mapStateToProps = state => {
     return {
       loading: state.typeBeats.loading,
-      typeBeats: state.typeBeats.typeBeats,
+      typeBeatAdded: state.typeBeats.typeBeatAdded,
       error: state.typeBeats.error
     };
   };
   
 const mapDispatchToProps = dispatch => {
     return {
-        addTypeBeat: () => dispatch({ type: "PUT_TYPEBEAT" }),
+        addTypeBeat: (beat) => dispatch({ type: "PUT_TYPEBEAT" , beat: beat}),
     };
 };
 

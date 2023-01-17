@@ -26,11 +26,12 @@ function* getTypeBeats() {
   }
 }
 
-function* putTypeBeat() {
+function* putTypeBeat(action) {
   try {
-    const response = yield call(addTypeBeat);
+    const response = yield call(addTypeBeat(action.beat));
     const typeBeatAdded = response
-    yield put({ type: "CALL_SUCCESS", typeBeatAdded });
+    console.log(typeBeatAdded)
+    yield put({ type: "PUT_SUCCESS", typeBeatAdded });
   
   } catch (error) {
     yield put({ type: "CALL_FAILURE", error});
@@ -42,15 +43,9 @@ async function getAllTypeBeats() {
     const querySnapshot = await getDocs(collection(db, "typeBeats"));
     return querySnapshot.docs
 }
-async function addTypeBeat() {
+async function addTypeBeat(beat) {
     try {
-        const docRef = await addDoc(collection(db, "typeBeats"), {
-          title: "",
-          bpm: "",
-          key: "",
-          price: "",
-          description: ""
-        });
+        const docRef = await addDoc(collection(db, "typeBeats"), beat);
         return docRef
     } catch (e) {
         console.error("Error adding document: ", e);
