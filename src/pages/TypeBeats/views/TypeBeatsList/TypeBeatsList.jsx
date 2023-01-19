@@ -45,7 +45,6 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     getAllTypeBeats: () => dispatch({ type: "GET_TYPEBEATS" }),
-    addTypeBeat: () => dispatch({ type: "PUT_TYPEBEAT" }),
     deleteTypeBeat: () => dispatch({ type: "DELETE_TYPEBEAT" })
   };
 };

@@ -2,7 +2,6 @@ import React from 'react';
 import { withTranslation } from 'react-i18next';
 import BeatCard from "../../../components/BeatCard/BeatCard";
 import { connect } from "react-redux";
-import { Redirect } from "wouter";
 
 class AddTypeBeat extends React.Component {
     constructor(props) {
@@ -17,6 +16,11 @@ class AddTypeBeat extends React.Component {
       this.handleChange = this.handleChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
     }
+
+    componentDidUpdate() {
+        console.log(this.props.typeBeatAdded!=null)
+        if (this.props.typeBeatAdded!=null) {RootNavigation.navigate("/typeBeats", null)}
+    }
   
     handleChange(event) {
       const target = event.target;
@@ -30,8 +34,6 @@ class AddTypeBeat extends React.Component {
 
     handleSubmit(event){
         this.props.addTypeBeat(this.state)
-        console.log(this.props.typeBeatAdded)
-        if (this.props.typeBeatAdded!=null) {<Redirect to="/typeBeats" />}
         event.preventDefault();
     }
 

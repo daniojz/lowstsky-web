@@ -28,11 +28,9 @@ function* getTypeBeats() {
 
 function* putTypeBeat(action) {
   try {
-    const response = yield call(addTypeBeat(action.beat));
-    const typeBeatAdded = response
-    console.log(typeBeatAdded)
+    const response = yield call(addTypeBeat, action.beat);
+    const typeBeatAdded = response.id
     yield put({ type: "PUT_SUCCESS", typeBeatAdded });
-  
   } catch (error) {
     yield put({ type: "CALL_FAILURE", error});
   }
