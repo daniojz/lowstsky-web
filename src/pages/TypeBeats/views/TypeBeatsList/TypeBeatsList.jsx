@@ -3,7 +3,7 @@ import {useTranslation} from "react-i18next"
 import { Icon } from "@iconify/react";
 import BeatCard from "../../../../components/BeatCard/BeatCard";
 import { connect } from "react-redux";
-import { Link } from "wouter";
+import { Link } from "react-router-dom";
 
 const TypeBeats = ({typeBeats, error, getAllTypeBeats}) => {
   const [ t, i18n ] = useTranslation('typesBeats');
@@ -24,7 +24,7 @@ const TypeBeats = ({typeBeats, error, getAllTypeBeats}) => {
       <div className="typeBeatsListContent">
         <div className="typeBeatsButtons">
           <button className="typeBeatButtonView"><Icon icon="akar-icons:sort"></Icon></button>
-          <Link href="/typeBeats/addTypeBeat" className="active"><button className="typeBeatButtonAdd" ><Icon icon="akar-icons:circle-plus-fill"></Icon></button></Link>
+          <Link to="/typeBeats/addTypeBeat" className="active"><button className="typeBeatButtonAdd" ><Icon icon="akar-icons:circle-plus-fill"></Icon></button></Link>
         </div>
         <div className="typeBeatsList">
           {typeBeats!=null ? typeBeats.map(beat => renderBeat(beat.data(), beat.id)) : "A ocurrido un error"}
