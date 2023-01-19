@@ -1,5 +1,5 @@
 import { takeEvery, call, put, all} from "redux-saga/effects";
-import { collection, addDoc, getDocs } from "firebase/firestore"; 
+import { collection, addDoc, getDocs, deleteDoc } from "firebase/firestore"; 
 import {db} from '../firebase'
 
 export default function* rootSaga() {
@@ -12,6 +12,7 @@ export default function* rootSaga() {
 export function* watchTypeBeatsSaga() {
   yield takeEvery("GET_TYPEBEATS", getTypeBeats);
   yield takeEvery("PUT_TYPEBEAT", putTypeBeat);
+  yield takeEvery("DELETE_TYPEBEAT", deleteTypeBeat);
 }
 
 // worker saga: makes the api call when watcher saga sees the action
@@ -20,7 +21,6 @@ function* getTypeBeats() {
     const response = yield call(getAllTypeBeats);
     const typeBeats = response
     yield put({ type: "CALL_SUCCESS", typeBeats });
-
   } catch (error) {
     yield put({ type: "CALL_FAILURE", error});
   }
@@ -32,7 +32,7 @@ function* putTypeBeat(action) {
     const typeBeatAdded = response.id
     yield put({ type: "PUT_SUCCESS", typeBeatAdded });
   } catch (error) {
-    yield put({ type: "CALL_FAILURE", error});
+    yield put({ type: "PUT_FAILURE", error});
   }
 }
 
@@ -50,6 +50,11 @@ async function addTypeBeat(beat) {
     }
 }
 async function deleteTypeBeat() {
-
+  try {
+    const docRef = await deleteDoc(collection(db, "typeBeats"), beat);
+    return docRef
+} catch (e) {
+    console.error("Error adding document: ", e);
+}
 }
 

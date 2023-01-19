@@ -1,9 +1,10 @@
 import React from 'react';
 import { withTranslation } from 'react-i18next';
-import BeatCard from "../../../components/BeatCard/BeatCard";
+import withRouter from '../../../components/WithRouter/WithRouter';
 import { connect } from "react-redux";
-
-class AddTypeBeat extends React.Component {
+import BeatCard from "../../../components/BeatCard/BeatCard";
+ 
+class AddTypeBeatForm extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
@@ -15,13 +16,21 @@ class AddTypeBeat extends React.Component {
       };
       this.handleChange = this.handleChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
+      this.checkState = this.checkState.bind(this);
     }
 
     componentDidUpdate() {
-        console.log(this.props.typeBeatAdded!=null)
-        if (this.props.typeBeatAdded!=null) {RootNavigation.navigate("/typeBeats", null)}
+        console.log(this.props)
+        this.checkState()
     }
   
+    checkState() {
+        if (this.props.typeBeatAdded!=null) {
+            this.props.resetState()
+            this.props.router.navigate("/typeBeats", {})
+        }
+    }
+
     handleChange(event) {
       const target = event.target;
       const value = target.type === 'checkbox' ? target.checked : target.value;
@@ -86,7 +95,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         addTypeBeat: (beat) => dispatch({ type: "PUT_TYPEBEAT" , beat: beat}),
+        resetState: () => dispatch({ type: "RESET_STATE"}),
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(withTranslation('global')(AddTypeBeat))
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(withTranslation('global')(AddTypeBeatForm)))

@@ -10,7 +10,7 @@ import Footer from "./components/footer/Footer";
 import Loading from "./components/Loading/Loading";
 import Home from "./pages/Home";
 import TypeBeats from "./pages/TypeBeats";
-import AddTypeBeat from "./pages/TypeBeats/components/AddTypeBeatForm";
+import AddTypeBeat from "./pages/TypeBeats/pages/AddTypeBeat";
 
 const sagaMiddleware = createSagaMiddleware();
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(sagaMiddleware)))
