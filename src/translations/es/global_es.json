@@ -1,7 +1,16 @@
 {
   "commonWords": {
-
+    "title": "Titulo",
+    "bpm": "BPM",
+    "price": "Precio",
+    "description": "Descripcion",
+    "send": "Enviar"
   },
+  "keyScales": [
+    "Dm",
+    "C#",
+    "Cm"
+  ],
   "contact": {
     "email": {
       "name": "lowstsky",
@@ -38,8 +47,6 @@
       "artwork": "ARTWORK",
       "contact": "CONTACTO"
     }
-  },
-  "main": {
   },
   "footer": {
     "footerBox": {

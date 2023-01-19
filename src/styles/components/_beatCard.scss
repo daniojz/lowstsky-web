@@ -1,6 +1,13 @@
-.beatCard_container {
-    width: 300px;
+.beatCardContainer {
+    height: 100px;
+    width: 250px;
+    padding: 5%;
     border: 1px black;
-    background-color: black;
+    border-radius: 10px;
+    background-color: $grey1-transparent-color;
     color: white;
-}
+  }
+  .beatCardContainer:hover {
+    background-color: $grey1-transparent-color;
+    cursor: pointer;
+  }
