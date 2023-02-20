@@ -14,8 +14,24 @@ $white-transparent-color: rgba(255, 255, 255, 0.500);
 $grey1-transparent-color: #bcbcbc7d;
 $grey2-transparent-color: #1C1C1C7d;
 $grey3-transparent-color: #0D0D0D7d;
+$grey4-transparent-color: #0d0d0db5;
 $black-transparent-color: rgba(0, 0, 0, 0.500);
 
+$blue-button-color: rgb(36, 0, 214);
+$white-button-color: $white-color;
+$grey-button-color: $grey1-color;
+
+//gradients
+@mixin navbar-gradient{
+	background: rgba(0, 0, 0, 0.8);
+	background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.8) 30%, rgba(255, 255, 255, 0) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(30%, rgba(0, 0, 0, 0.8)), color-stop(100%, rgba(255, 255, 255, 0)));
+	background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.8) 30%, rgba(255, 255, 255, 0) 100%);
+	background: -o-linear-gradient(top, rgba(0, 0, 0, 0.8) 30%, rgba(255, 255, 255, 0) 100%);
+	background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.8) 30%, rgba(255, 255, 255, 0) 100%);
+	background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 30%, rgba(255, 255, 255, 0) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#ffffff', GradientType=0);
+}
 //tipography
 $text-small: normal normal normal normal 0.8em 'Roboto', sans-serif;
 $text-medium: normal normal normal normal 1em 'Roboto', sans-serif;
@@ -26,8 +42,19 @@ $text-title-big: normal normal bold normal 3em 'Roboto', sans-serif;
 $text-title-super-big: normal normal bold normal 4em  'Roboto', sans-serif;
 
 
-//resposive sizes
+//resposive vars
 $big-screen: 1200px;
 $medium-screen: 992px;
 $small-screen: 768px;
 $super-small-screen: 576px;
+
+@mixin tablet {
+	@media screen and (min-width: #{$small-screen}) {
+		@content;
+	}
+}
+@mixin desktop {
+	@media screen and (min-width: #{$big-screen}) {
+		@content;
+	}
+}

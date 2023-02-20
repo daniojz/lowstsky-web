@@ -4,12 +4,14 @@
   margin: 0;
   padding: 0;
 
-  background-image: url(../assets/img/background.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
+  // background-image: url(../assets/img/background.jpg);
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  background-color: black;
 
   scroll-behavior: smooth;
-  
+
+    
   .App, main, #root {
     width: 100%;
     height: 100%;
@@ -17,16 +19,18 @@
     padding: 0;  
   }
 
+  body {
+    min-height: 92vh;
+    margin: 0;
+    display: flex;
+    place-items: center;
+    min-width: 320px;
+    min-height: 100vh;
+    font-size: 15px;
+  }
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-  font-size: 15px;
-}
+
 
 section {
   width: 100%;
@@ -48,6 +52,8 @@ section {
 @import './components/scrollDownButton';
 @import './components/loading';
 @import './components/beatCard';
+@import './components/button';
+@import './components/input';
 
 //views
 @import './views/home';

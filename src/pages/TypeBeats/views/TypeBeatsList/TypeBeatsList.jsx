@@ -1,33 +1,50 @@
 import { React, useEffect, useRef, useState } from "react";
-import {useTranslation} from "react-i18next"
+import { useTranslation } from "react-i18next"
 import { Icon } from "@iconify/react";
 import BeatCard from "../../../../components/BeatCard/BeatCard";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
-const TypeBeats = ({typeBeats, error, getAllTypeBeats}) => {
-  const [ t, i18n ] = useTranslation('typesBeats');
- 
+const TypeBeats = ({ typeBeats, error, getAllTypeBeats }) => {
+  const [t, i18n] = useTranslation('typesBeats');
+
+  //estado 0-> normal
+  //estado 1-> edit mode
+  const [listState, setListState] = useState(0);
+
   useEffect(() => {
     getAllTypeBeats()
   }, [])
-  
+
   const renderBeat = (beat, key) => {
-    const {title, price, photourl} = beat;
+    const { title, price, photourl } = beat;
     return (
       <BeatCard key={key} title={title} price={price} photoUrl={photourl}></BeatCard>
     )
+  }
+
+  const handleButtonEdit = () => {
+    listState==0 ? setListState(1) : setListState(0)
   }
 
   return (
     <>
       <div className="typeBeatsListContent">
         <div className="typeBeatsButtons">
-          <button className="typeBeatButtonView"><Icon icon="akar-icons:sort"></Icon></button>
-          <Link to="/typeBeats/addTypeBeat" className="active"><button className="typeBeatButtonAdd" ><Icon icon="akar-icons:circle-plus-fill"></Icon></button></Link>
+          <button className="typeBeatButtonView">
+            <Icon icon="akar-icons:sort"></Icon>
+          </button>
+          <Link to="/typeBeats/addTypeBeat" className="active">
+            <button className="typeBeatButtonAdd" >
+              <Icon icon="akar-icons:circle-plus-fill"></Icon>
+            </button>
+          </Link>
+          <button className={`typeBeatButtonEdit ${listState === 1 ? "typeBeatButtonEdit-active" : "typeBeatButtonEdit-normal"}`} onClick={handleButtonEdit}>
+            <Icon icon="akar-icons:grid"></Icon>
+          </button>
         </div>
-        <div className="typeBeatsList">
-          {typeBeats!=null ? typeBeats.map(beat => renderBeat(beat.data(), beat.id)) : "A ocurrido un error"}
+        <div className={`typeBeatsList ${listState === 1 ? "typeBeatsList-active" : "typeBeatsList-normal"}`}>
+          {typeBeats != null ? typeBeats.map(beat => renderBeat(beat.data(), beat.id)) : "A ocurrido un error"}
         </div>
       </div>
     </>

@@ -1,33 +1,43 @@
-import {useState, useEffect, React} from "react";
+import { useState, useEffect, useRef, React } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "wouter";
 import { Icon } from "@iconify/react";
 
 
-const Navbar = ({}) => {
-  const [ t, i18n ] = useTranslation('global');
-  const [hidden, setHidden] = useState(false);
-  const [background, setBackground] = useState(false);
+const Navbar = ({ }) => {
+  const [t, i18n] = useTranslation('global');
+  const [hidden, sethidden] = useState(false);
 
   useEffect(() => {
-    const handleScroll = event => {
-      window.scrollY>screen.height-400 ? setHidden(true) : setHidden(false)
-      window.scrollY==0 ? setBackground(false) : setBackground(true)
-    };
-    window.addEventListener('scroll', handleScroll);
+    if (screen.width > 768) {
+      sethidden({ ...state, view: "desktop" })
 
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+      const handleScroll = event => {
+        window.scrollY > screen.height - 400 ? sethidden({ ...state, visibility: "hidden" }) : sethidden({ ...state, visibility: "show" })
+        window.scrollY == 0 ? sethidden({ ...state, background: "transparent" }) : sethidden({ ...state, background: "gradient" })
+      };
+      window.addEventListener('scroll', handleScroll);
+
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    } else {
+      sethidden({ ...state, visibility: "hidden", view: "mobile" })
+    }
   }, []);
 
   const handleLogoOnClick = event => {
-    setHidden(false)
+    sethidden({ ...state, background: "dark", visibility: "show", view: "mobile" })
   };
 
   return (
-    <nav id="navbar" className={`${hidden==true ? 'navbarHidden' : ''} ${background==true ? 'backgroundNavbar' : ''}`}>
-      <div className={`navbarContainer`}>
+    <nav id="navbar">
+      <div className={`navbarShowButton ${hidden == true ? "hidden" : "show"}`}>
+        <button onClick={handleLogoOnClick}>
+          <Icon icon="akar-icons:three-line-horizontal" width="35" height="35" />
+        </button>
+      </div>
+      <div className="navbarOptions">
         <Link href="/home">
           <a>{t('header.navbar.sobreMi')}</a>
         </Link>
@@ -49,11 +59,6 @@ const Navbar = ({}) => {
         <Link href="/">
           <a>{t('header.navbar.contact')}</a>
         </Link>
-      </div>
-      <div className="navbarShowButton">
-        <button onClick={handleLogoOnClick}>
-          <Icon icon="akar-icons:three-line-horizontal" width="35" height="35" />
-        </button>
       </div>
     </nav>
   );
