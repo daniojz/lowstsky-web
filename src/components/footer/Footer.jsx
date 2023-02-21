@@ -8,7 +8,7 @@ const Footer = ({}) => {
 
   return (
     <div className="footerContent">
-      <FollowMe className="followMeContainer"></FollowMe>
+      <FollowMe className="followMeContainer" color={"white"}></FollowMe>
         <div className="footerContainer">
           <FooterBox title={t('footer.footerBox.footerBox1.title')} links={t('footer.footerBox.footerBox1.links')}></FooterBox>
           <FooterBox title={t('footer.footerBox.footerBox2.title')} links={t('footer.footerBox.footerBox2.links')}></FooterBox>

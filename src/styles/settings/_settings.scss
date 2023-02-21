@@ -54,7 +54,7 @@ $super-small-screen: 576px;
 	}
 }
 @mixin desktop {
-	@media screen and (min-width: #{$big-screen}) {
+	@media screen and (min-width: #{$medium-screen}) {
 		@content;
 	}
 }
