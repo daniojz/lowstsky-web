@@ -1,77 +1,101 @@
-nav {
-    width: 100%;
-    height: 8vh;
-    padding: 10px 0;
-    position: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: transparent;
-    color: black;
-    z-index: 100;
-
-
-    .navbarContainer {
-        width: 80%;
+#navbar {
+    .navbarContent {
+        width: 100%;
+        position: fixed;
+        z-index: 10000;
         display: flex;
-        justify-content: space-around;
-        transition: opacity 1s;
+        justify-content: center;
+        align-items: center;
+        background-color: $grey4-transparent-color;
+        color: $white-color;
 
-        a {
-            margin: 0 20px;
-            font: $text-title-small;
-            color: $grey1-color;
-            text-decoration: none;
-            text-align: center;
+        .navbarOptions {
+            width: 80%;
+            height: 100vh;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            row-gap: 45px;
+            opacity: 0;
+            top: -100px;
+            transition: opacity 1s;
 
-            &:hover {
+            a {
+                margin: 0 20px;
+                display: flex;
+                align-items: center;
+                font: $text-title-small;
+                color: $grey1-color;
+                text-decoration: none;
+                text-align: center;
+
+                &:hover {
+                    color: $white-color;
+                }
+            }
+        }
+
+        .navbarShowButton {
+            width: 10%;
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            display: flex;
+            justify-content: center;
+            font: $text-title-big;
+
+            button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: $grey1-color;
+                cursor: pointer;
+                background-color: transparent;
+                border: none;
+            }
+
+            button:hover {
                 color: $white-color;
             }
         }
     }
-    .navbarShowButton{
-        display: none;
-    }
-}
 
-.navbarHidden {
-    display: flex;
-    justify-content: flex-end;
-
-    .navbarContainer {
-        opacity: 0;
-        position: relative;
-        top: -100px;
-    }
-    .navbarShowButton{
-        width: 10%;
+    //visivility-prop
+    .hidden {
         display: flex;
-        justify-content: center;
-        font: $text-title-big;
+        justify-content: flex-end;
+        // @include navbar-gradient;
 
-        button {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: $grey1-color;
-            cursor: pointer;
-            background-color: transparent;
-            border: none;
+        .navbarOptions {
+            display: none;
+            opacity: 0;
+            top: -100px;
         }
-        button:hover {
-            color: $white-color;
+    }
+
+    .show {
+        .navbarOptions {
+            opacity: 100;
+            top: 0px;
         }
     }
 }
 
-.backgroundNavbar {
-    background: rgba(0,0,0,0.8);
-    background: -moz-linear-gradient(top, rgba(0,0,0,0.8) 30%, rgba(255,255,255,0) 100%);
-    background: -webkit-gradient(left top, left bottom, color-stop(30%, rgba(0,0,0,0.8)), color-stop(100%, rgba(255,255,255,0)));
-    background: -webkit-linear-gradient(top, rgba(0,0,0,0.8) 30%, rgba(255,255,255,0) 100%);
-    background: -o-linear-gradient(top, rgba(0,0,0,0.8) 30%, rgba(255,255,255,0) 100%);
-    background: -ms-linear-gradient(top, rgba(0,0,0,0.8) 30%, rgba(255,255,255,0) 100%);
-    background: linear-gradient(to bottom, rgba(0,0,0,0.8) 30%, rgba(255,255,255,0) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#ffffff', GradientType=0 );
-}
+@include desktop {
+    .navbarContent {
 
+        .navbarOptions  {
+            display: flex !important;
+            height: 8vh !important;
+            width: 100% !important;
+            flex-direction: row !important;
+            justify-content: center !important;
+            opacity: 100 !important;;
+            top: 0px !important;;
+        }
+        .navbarShowButton {
+            display: none !important;
+        }
+    }
+}

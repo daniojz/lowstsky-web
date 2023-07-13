@@ -1,7 +1,7 @@
 import React from "react";
 import AddTypeBeatForm from "../components/AddTypeBeatForm";
 
-const AddTypeBeatForm = ({}) => {
+const AddTypeBeat = ({}) => {
   return (
     <div className="addTypeBeatContent">
       <AddTypeBeatForm></AddTypeBeatForm>
@@ -9,4 +9,4 @@ const AddTypeBeatForm = ({}) => {
   );
 }
 
-export default AddTypeBeatForm
+export default (AddTypeBeat)

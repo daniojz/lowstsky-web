@@ -1,38 +1,51 @@
 import React from 'react';
 import { withTranslation } from 'react-i18next';
-import BeatCard from "../../../components/BeatCard/BeatCard";
+import withRouter from '../../../components/WithRouter/WithRouter';
 import { connect } from "react-redux";
+import BeatCard from "../../../components/BeatCard/BeatCard";
+import Button from '../../../components/Button/Button';
+import Input from '../../../components/Input/Input';
+import InputSelect from '../../../components/Select/Select';
 
-class AddTypeBeat extends React.Component {
+class AddTypeBeatForm extends React.Component {
     constructor(props) {
-      super(props);
-      this.state = {
-        title: "",
-        bpm: "",
-        key: "",
-        price: "",
-        description: ""
-      };
-      this.handleChange = this.handleChange.bind(this);
-      this.handleSubmit = this.handleSubmit.bind(this);
+        super(props);
+        this.state = {
+            title: "",
+            bpm: "",
+            key: "",
+            price: "",
+            description: ""
+        };
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.checkState = this.checkState.bind(this);
     }
 
     componentDidUpdate() {
-        console.log(this.props.typeBeatAdded!=null)
-        if (this.props.typeBeatAdded!=null) {RootNavigation.navigate("/typeBeats", null)}
-    }
-  
-    handleChange(event) {
-      const target = event.target;
-      const value = target.type === 'checkbox' ? target.checked : target.value;
-      const name = target.name;
-  
-      this.setState({
-        [name]: value
-      });
+        console.log(this.props)
+        this.checkState()
     }
 
-    handleSubmit(event){
+    checkState() {
+        if (this.props.typeBeatAdded != null) {
+            this.props.resetState()
+            this.props.router.navigate("/typeBeats", {})
+        }
+    }
+
+    handleChange(event) {
+        debugger
+        const target = event.target;
+        const value = target.type === 'checkbox' ? target.checked : target.value;
+        const name = target.name;
+
+        this.setState({
+            [name]: value
+        });
+    }
+
+    handleSubmit(event) {
         this.props.addTypeBeat(this.state)
         event.preventDefault();
     }
@@ -41,8 +54,48 @@ class AddTypeBeat extends React.Component {
         return (
             <div className="addTypeBeatFormContent">
                 <div className="addTypeBeatFormContainer">
-                    <form onSubmit={this.handleSubmit}>
-                        <label>
+                    <form>
+                        <Input
+                            name={this.props.t('commonWords.title')}
+                            type="text"
+                            color="grey1"
+                            sizing="max-size"
+                            label={this.props.t('commonWords.title')}
+                            onChange={this.handleChange}>
+                        </Input>
+                        <Input
+                            name={this.props.t('commonWords.bpm')}
+                            type="text"
+                            color="grey1"
+                            sizing="max-size"
+                            label={this.props.t('commonWords.bpm')}
+                            onChange={this.handleChange}>
+                        </Input>
+                        <InputSelect
+                            name={this.props.t('commonWords.key')}
+                            color="grey1"
+                            sizing="max-size"
+                            list={this.props.t('keyScales')}
+                            defaultValue={this.props.t('commonWords.key')}
+                            onChange={this.handleChange}>
+                        </InputSelect>
+                        <Input
+                            name={this.props.t('commonWords.price')}
+                            type="text"
+                            color="grey1"
+                            sizing="max-size"
+                            label={this.props.t('commonWords.price')}
+                            onChange={this.handleChange}>
+                        </Input>
+                        <Input
+                            name={this.props.t('commonWords.description')}
+                            type="text"
+                            color="grey1"
+                            sizing="max-size"
+                            label={this.props.t('commonWords.description')}
+                            onChange={this.handleChange}>
+                        </Input>
+                        {/* <label>
                             <span>{this.props.t('commonWords.title')}</span>
                             <input type="text" name='title' defaultValue={this.state.title} onChange={this.handleChange} />
                         </label>
@@ -52,9 +105,9 @@ class AddTypeBeat extends React.Component {
                         </label>
                         <select defaultValue={this.state.bpm} name='key' onChange={this.handleChange}>
                             {
-                            (this.props.t('keyScales')).map((key) => {
-                                return <option key={key} value={key}>{key}</option>
-                            })}
+                                (this.props.t('keyScales')).map((key) => {
+                                    return <option key={key} value={key}>{key}</option>
+                                })}
                         </select>
                         <label>
                             <span>{this.props.t('commonWords.price')}</span>
@@ -63,12 +116,11 @@ class AddTypeBeat extends React.Component {
                         <label>
                             <span>{this.props.t('commonWords.description')}</span>
                             <textarea defaultValue={this.state.description} name='description' onChange={this.handleChange} />
-                        </label>
-                        <input type="submit" value="Submit" onClick={this.handleSubmit}/>
+                        </label> */}
                     </form>
                 </div>
-                <div className="typeBeatImage">
-                    <BeatCard key={this.state.key} title={this.state.title} price={this.state.price} photoUrl={null}></BeatCard>
+                <div className='addTypeBeatFormButtons'>
+                    <Button type="submit" text="Add" color="blue" sizing="medium" onClick={this.handleSubmit}></Button>
                 </div>
             </div>
         )
@@ -77,16 +129,17 @@ class AddTypeBeat extends React.Component {
 
 const mapStateToProps = state => {
     return {
-      loading: state.typeBeats.loading,
-      typeBeatAdded: state.typeBeats.typeBeatAdded,
-      error: state.typeBeats.error
-    };
-  };
-  
-const mapDispatchToProps = dispatch => {
-    return {
-        addTypeBeat: (beat) => dispatch({ type: "PUT_TYPEBEAT" , beat: beat}),
+        loading: state.typeBeats.loading,
+        typeBeatAdded: state.typeBeats.typeBeatAdded,
+        error: state.typeBeats.error
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(withTranslation('global')(AddTypeBeat))
+const mapDispatchToProps = dispatch => {
+    return {
+        addTypeBeat: (beat) => dispatch({ type: "PUT_TYPEBEAT", beat: beat }),
+        resetState: () => dispatch({ type: "RESET_STATE" }),
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(withTranslation('global')(AddTypeBeatForm)))

@@ -2,22 +2,8 @@ import React from "react";
 import { Icon } from "@iconify/react";
 
 const FollowMe = ({color}) => {
-  let colorClass = "grey"
-
-  switch (color) {
-    case 'white':
-      colorClass = "white"
-      break;
-    case 'black':
-      colorClass = "black"
-      break;
-    case 'grey':
-      colorClass = "grey"
-      break;        
-  }
-
   return (
-    <div className={`followMeContainer ${colorClass}`}>
+    <div className={`followMeContainer ${color}`}>
       <span>
         <a href="">
           <Icon icon="akar-icons:github-fill" width="20" height="20" />
