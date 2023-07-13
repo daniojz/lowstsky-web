@@ -20,25 +20,25 @@ const Navbar = ({ }) => {
           </button>
         </div>
         <div className="navbarOptions">
-          <Link href="/home">
+          <Link to="/home" onClick={() => window.location.reload()}>
             <a>{t('header.navbar.sobreMi')}</a>
           </Link>
-          <Link href="/typeBeats">
+          <Link to="/typeBeats" onClick={() => window.location.reload()}>
             <a>{t('header.navbar.typeBeats')}</a>
           </Link>
-          <Link href="/">
+          <Link to="/" onClick={() => window.location.reload()}>
             <a>{t('header.navbar.beatsPersonalizados')}</a>
           </Link>
-          <Link href="/">
+          <Link to="/" onClick={() => window.location.reload()}>
             <a>{t('header.navbar.mezclaMastering')}</a>
           </Link>
-          <Link href="/">
+          <Link to="/" onClick={() => window.location.reload()}>
             <a>{t('header.navbar.produccionesColabs')}</a>
           </Link>
-          <Link href="/">
+          <Link to="/" onClick={() => window.location.reload()}>
             <a>{t('header.navbar.artwork')}</a>
           </Link>
-          <Link href="/">
+          <Link to="/" onClick={() => window.location.reload()}>
             <a>{t('header.navbar.contact')}</a>
           </Link>
         </div>

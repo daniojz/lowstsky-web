@@ -5,8 +5,7 @@ import BeatCard from "../../../../components/BeatCard/BeatCard";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
-const TypeBeats = ({ typeBeats, error, getAllTypeBeats }) => {
-  const [t, i18n] = useTranslation('typesBeats');
+const TypeBeats = ({ typeBeats, getAllTypeBeats }) => {
 
   //estado 0-> normal
   //estado 1-> edit mode
@@ -24,7 +23,7 @@ const TypeBeats = ({ typeBeats, error, getAllTypeBeats }) => {
   }
 
   const handleButtonEdit = () => {
-    listState==0 ? setListState(1) : setListState(0)
+    listState == 0 ? setListState(1) : setListState(0)
   }
 
   return (
@@ -34,14 +33,20 @@ const TypeBeats = ({ typeBeats, error, getAllTypeBeats }) => {
           <button className="typeBeatButtonView">
             <Icon icon="akar-icons:sort"></Icon>
           </button>
+          <button className={`typeBeatButtonEdit ${listState === 1 ? "typeBeatButtonEdit-active" : "typeBeatButtonEdit-normal"}`} onClick={handleButtonEdit}>
+            Edit
+          </button>
           <Link to="/typeBeats/addTypeBeat" className="active">
             <button className="typeBeatButtonAdd" >
               <Icon icon="akar-icons:circle-plus-fill"></Icon>
             </button>
           </Link>
-          <button className={`typeBeatButtonEdit ${listState === 1 ? "typeBeatButtonEdit-active" : "typeBeatButtonEdit-normal"}`} onClick={handleButtonEdit}>
-            <Icon icon="akar-icons:grid"></Icon>
-          </button>
+          { 
+            listState === 1 ? 
+            <button className="typeBeatButtonDelete">
+              <Icon icon="akar-icons:trash-can"></Icon>
+            </button> : ""
+          }
         </div>
         <div className={`typeBeatsList ${listState === 1 ? "typeBeatsList-active" : "typeBeatsList-normal"}`}>
           {typeBeats != null ? typeBeats.map(beat => renderBeat(beat.data(), beat.id)) : "A ocurrido un error"}

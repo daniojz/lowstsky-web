@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import BeatCard from "../../../components/BeatCard/BeatCard";
 import Button from '../../../components/Button/Button';
 import Input from '../../../components/Input/Input';
+import InputSelect from '../../../components/Select/Select';
 
 class AddTypeBeatForm extends React.Component {
     constructor(props) {
@@ -34,6 +35,7 @@ class AddTypeBeatForm extends React.Component {
     }
 
     handleChange(event) {
+        debugger
         const target = event.target;
         const value = target.type === 'checkbox' ? target.checked : target.value;
         const name = target.name;
@@ -51,12 +53,48 @@ class AddTypeBeatForm extends React.Component {
     render() {
         return (
             <div className="addTypeBeatFormContent">
-                <div className="typeBeatImage">
-                    <BeatCard key={this.state.key} title={this.state.title} price={this.state.price} photoUrl={null}></BeatCard>
-                </div>
                 <div className="addTypeBeatFormContainer">
                     <form>
-                        <Input type="text" color="grey" sizing="max-size" label={this.props.t('commonWords.title')}></Input>
+                        <Input
+                            name={this.props.t('commonWords.title')}
+                            type="text"
+                            color="grey1"
+                            sizing="max-size"
+                            label={this.props.t('commonWords.title')}
+                            onChange={this.handleChange}>
+                        </Input>
+                        <Input
+                            name={this.props.t('commonWords.bpm')}
+                            type="text"
+                            color="grey1"
+                            sizing="max-size"
+                            label={this.props.t('commonWords.bpm')}
+                            onChange={this.handleChange}>
+                        </Input>
+                        <InputSelect
+                            name={this.props.t('commonWords.key')}
+                            color="grey1"
+                            sizing="max-size"
+                            list={this.props.t('keyScales')}
+                            defaultValue={this.props.t('commonWords.key')}
+                            onChange={this.handleChange}>
+                        </InputSelect>
+                        <Input
+                            name={this.props.t('commonWords.price')}
+                            type="text"
+                            color="grey1"
+                            sizing="max-size"
+                            label={this.props.t('commonWords.price')}
+                            onChange={this.handleChange}>
+                        </Input>
+                        <Input
+                            name={this.props.t('commonWords.description')}
+                            type="text"
+                            color="grey1"
+                            sizing="max-size"
+                            label={this.props.t('commonWords.description')}
+                            onChange={this.handleChange}>
+                        </Input>
                         {/* <label>
                             <span>{this.props.t('commonWords.title')}</span>
                             <input type="text" name='title' defaultValue={this.state.title} onChange={this.handleChange} />

@@ -4,6 +4,7 @@
     "bpm": "BPM",
     "price": "Precio",
     "description": "Descripcion",
+    "key": "key",
     "send": "Enviar"
   },
   "keyScales": [

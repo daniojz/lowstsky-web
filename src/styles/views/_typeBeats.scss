@@ -24,7 +24,7 @@
   .typeBeatsListContent {
     width: 100%;
     height: fit-content;
-    padding: 2%;
+    margin-top: 2%;
     display: flex;
     justify-content: start;
     align-items: center;
@@ -34,6 +34,7 @@
       width: 100%;
       display: flex;
       justify-content: end;
+      font: $text-title-small;
 
       button {
         width: 45px;
@@ -50,8 +51,8 @@
 
       button:hover {
         cursor: pointer;
-        background-color: $grey3-transparent-color;
-        color: white;
+        background-color: $grey2-transparent-color;
+        color: $white-color;
       }
 
       .typeBeatButtonEdit-active {
@@ -60,6 +61,10 @@
 
       .typeBeatButtonEdit-normal {
         background-color: $grey1-transparent-color;
+      }
+
+      .typeBeatButtonDelete {
+        color: $red1-color;
       }
     }
 

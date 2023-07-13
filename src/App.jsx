@@ -3,7 +3,7 @@ import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import { composeWithDevTools } from 'redux-devtools-extension';
 import createSagaMiddleware from "redux-saga";
-import rootSaga from "./sagas/typeBeatsSaga";
+import rootSaga from "./sagas";
 import rootReducer from "./reducers";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";

@@ -1,7 +1,7 @@
 .buttonContainer {
     button {
         border: none;
-        border-radius: 8px;
+        border-radius: 6px;
         font: $text-medium;
     }
 
@@ -24,10 +24,10 @@
     }
     .medium {
         width: 90px;
-        height: 40px;
+        height: 50px;
     }
     .small {
         width: 70px;
-        height: 20px;
+        height: 40px;
     }
 }
