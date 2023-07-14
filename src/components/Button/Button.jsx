@@ -1,7 +1,17 @@
-import React from "react";
-import PropTypes from 'prop-types';
+import React from 'react'
+import PropTypes from 'prop-types'
 
-const Button = ({ id, value, name, text, color, type, sizing, onClick, className }) => {
+const Button = ({
+  id,
+  value,
+  name,
+  text,
+  color,
+  type,
+  sizing,
+  onClick,
+  className,
+}) => {
   return (
     <span className={`buttonContainer`}>
       <button
@@ -10,11 +20,12 @@ const Button = ({ id, value, name, text, color, type, sizing, onClick, className
         type={type}
         value={value}
         className={`${className} ${color} ${sizing}`}
-        onClick={onClick}>
+        onClick={onClick}
+      >
         {text}
       </button>
     </span>
-  );
+  )
 }
 
 Button.propTypes = {
@@ -22,13 +33,13 @@ Button.propTypes = {
   text: PropTypes.string.isRequired,
   color: PropTypes.string.isRequired,
   sizing: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired
+  onClick: PropTypes.func.isRequired,
 }
 
 Button.defaultProps = {
-  className: "",
-  sizing: "medium",
-  color: "grey"
+  className: '',
+  sizing: 'medium',
+  color: 'grey',
 }
 
 export default Button

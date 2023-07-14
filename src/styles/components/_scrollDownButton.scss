@@ -1,40 +1,43 @@
 .scrollDownButtonContainer {
-    position: absolute;
-    bottom: 0;
-    color: $grey1-color; 
-    background-color: transparent;
-    border-color: transparent;
-    cursor: pointer;
-    animation-name: fallDown;
-    animation-duration: 0.5s;
-    animation-direction: alternate-reverse;
-    animation-iteration-count: 4;
+  position: absolute;
+  bottom: 0;
+  color: $grey1-color;
+  background-color: transparent;
+  border-color: transparent;
+  cursor: pointer;
+  animation-name: fallDown;
+  animation-duration: 0.5s;
+  animation-direction: alternate-reverse;
+  animation-iteration-count: 4;
 
-    .black {
-        color: $black-color
-    }
-    .black:hover{
-        color: $white-color;
-    }
-    .grey {
-        color: $grey1-color;
-    }
-    .grey:hover{
-        color: $white-color;
-    }
-    .white {
-        color: $white-color;
-    }
-    .white:hover{
-        color: $grey1-color;
-    }
+  .black {
+    color: $black-color;
+  }
+  .black:hover {
+    color: $white-color;
+  }
+  .grey {
+    color: $grey1-color;
+  }
+  .grey:hover {
+    color: $white-color;
+  }
+  .white {
+    color: $white-color;
+  }
+  .white:hover {
+    color: $grey1-color;
+  }
 }
 .scrollDownButtonContainer:hover {
-    color: $white-color;
-
+  color: $white-color;
 }
 
 @keyframes fallDown {
-    from {bottom: 20px;}
-    to {bottom: 0px;}
+  from {
+    bottom: 20px;
   }
+  to {
+    bottom: 0px;
+  }
+}

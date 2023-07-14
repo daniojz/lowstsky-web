@@ -1,33 +1,33 @@
 .buttonContainer {
-    button {
-        border: none;
-        border-radius: 6px;
-        font: $text-medium;
-    }
+  button {
+    border: none;
+    border-radius: 6px;
+    font: $text-medium;
+  }
 
-    .blue {
-        background-color: $blue-button-color;
-        color: $white-color
-    }
-    .white {
-        background-color: $white-button-color;
-        color: $black-color
-    }
-    .grey {
-        background-color: $grey-button-color;
-        color: $black-color
-    }
+  .blue {
+    background-color: $blue-button-color;
+    color: $white-color;
+  }
+  .white {
+    background-color: $white-button-color;
+    color: $black-color;
+  }
+  .grey {
+    background-color: $grey-button-color;
+    color: $black-color;
+  }
 
-    .big {
-        width: 110px;
-        height: 60px;
-    }
-    .medium {
-        width: 90px;
-        height: 50px;
-    }
-    .small {
-        width: 70px;
-        height: 40px;
-    }
+  .big {
+    width: 110px;
+    height: 60px;
+  }
+  .medium {
+    width: 90px;
+    height: 50px;
+  }
+  .small {
+    width: 70px;
+    height: 40px;
+  }
 }

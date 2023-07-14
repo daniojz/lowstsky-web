@@ -1,47 +1,85 @@
 //colors
 $main-color: black;
-$primary-color: #16182C;
-$secondary-color: #12163D;
+$primary-color: #16182c;
+$secondary-color: #12163d;
 $tertiary-color: #221343;
 
 $white-color: white;
-$grey1-color: #BCBCBC;
-$grey2-color: #1C1C1C;
-$grey3-color: #0D0D0D;
+$grey1-color: #bcbcbc;
+$grey2-color: #1c1c1c;
+$grey3-color: #0d0d0d;
 $red1-color: #ff0000;
 $black-color: black;
 
-$white-transparent-color: rgba(255, 255, 255, 0.500);
+$white-transparent-color: rgba(255, 255, 255, 0.5);
 $grey1-transparent-color: #bcbcbc7d;
-$grey2-transparent-color: #1C1C1C7d;
-$grey3-transparent-color: #0D0D0D7d;
+$grey2-transparent-color: #1c1c1c7d;
+$grey3-transparent-color: #0d0d0d7d;
 $grey4-transparent-color: #0d0d0db5;
-$black-transparent-color: rgba(0, 0, 0, 0.500);
+$black-transparent-color: rgba(0, 0, 0, 0.5);
 
 $blue-button-color: rgb(36, 0, 214);
 $white-button-color: $white-color;
 $grey-button-color: $grey1-color;
 
 //gradients
-@mixin navbar-gradient{
-	background: rgba(0, 0, 0, 0.8);
-	background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.8) 30%, rgba(255, 255, 255, 0) 100%);
-	background: -webkit-gradient(left top, left bottom, color-stop(30%, rgba(0, 0, 0, 0.8)), color-stop(100%, rgba(255, 255, 255, 0)));
-	background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.8) 30%, rgba(255, 255, 255, 0) 100%);
-	background: -o-linear-gradient(top, rgba(0, 0, 0, 0.8) 30%, rgba(255, 255, 255, 0) 100%);
-	background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.8) 30%, rgba(255, 255, 255, 0) 100%);
-	background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 30%, rgba(255, 255, 255, 0) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#ffffff', GradientType=0);
+@mixin navbar-gradient {
+  background: rgba(0, 0, 0, 0.8);
+  background: -moz-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0.8) 30%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background: -webkit-gradient(
+    left top,
+    left bottom,
+    color-stop(30%, rgba(0, 0, 0, 0.8)),
+    color-stop(100%, rgba(255, 255, 255, 0))
+  );
+  background: -webkit-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0.8) 30%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background: -o-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0.8) 30%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background: -ms-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0.8) 30%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.8) 30%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#ffffff', GradientType=0);
 }
 //tipography
-$text-small: normal normal normal normal 0.8em 'Roboto', sans-serif;
-$text-medium: normal normal normal normal 1em 'Roboto', sans-serif;
-$text-big: normal normal normal normal 1.5em 'Roboto', sans-serif;
-$text-title-small: normal normal bold normal 1em 'Roboto', sans-serif;
-$text-title-medium: normal normal bold normal 2em 'Roboto', sans-serif;
-$text-title-big: normal normal bold normal 3em 'Roboto', sans-serif;
-$text-title-super-big: normal normal bold normal 4em  'Roboto', sans-serif;
-
+$text-small:
+  normal normal normal normal 0.8em 'Roboto',
+  sans-serif;
+$text-medium:
+  normal normal normal normal 1em 'Roboto',
+  sans-serif;
+$text-big:
+  normal normal normal normal 1.5em 'Roboto',
+  sans-serif;
+$text-title-small:
+  normal normal bold normal 1em 'Roboto',
+  sans-serif;
+$text-title-medium:
+  normal normal bold normal 2em 'Roboto',
+  sans-serif;
+$text-title-big:
+  normal normal bold normal 3em 'Roboto',
+  sans-serif;
+$text-title-super-big:
+  normal normal bold normal 4em 'Roboto',
+  sans-serif;
 
 //resposive vars
 $big-screen: 1200px;
@@ -50,12 +88,12 @@ $small-screen: 768px;
 $super-small-screen: 576px;
 
 @mixin tablet {
-	@media screen and (min-width: #{$small-screen}) {
-		@content;
-	}
+  @media screen and (min-width: #{$small-screen}) {
+    @content;
+  }
 }
 @mixin desktop {
-	@media screen and (min-width: #{$medium-screen}) {
-		@content;
-	}
+  @media screen and (min-width: #{$medium-screen}) {
+    @content;
+  }
 }

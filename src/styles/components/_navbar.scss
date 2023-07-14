@@ -1,101 +1,100 @@
 #navbar {
-    .navbarContent {
-        width: 100%;
-        position: fixed;
-        z-index: 10000;
+  .navbarContent {
+    width: 100%;
+    position: fixed;
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $grey4-transparent-color;
+    color: $white-color;
+
+    .navbarOptions {
+      width: 80%;
+      height: 100vh;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      row-gap: 45px;
+      opacity: 0;
+      top: -100px;
+      transition: opacity 1s;
+
+      a {
+        margin: 0 20px;
+        display: flex;
+        align-items: center;
+        font: $text-title-small;
+        color: $grey1-color;
+        text-decoration: none;
+        text-align: center;
+
+        &:hover {
+          color: $white-color;
+        }
+      }
+    }
+
+    .navbarShowButton {
+      width: 10%;
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      display: flex;
+      justify-content: center;
+      font: $text-title-big;
+
+      button {
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: $grey4-transparent-color;
+        color: $grey1-color;
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+      }
+
+      button:hover {
         color: $white-color;
-
-        .navbarOptions {
-            width: 80%;
-            height: 100vh;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            row-gap: 45px;
-            opacity: 0;
-            top: -100px;
-            transition: opacity 1s;
-
-            a {
-                margin: 0 20px;
-                display: flex;
-                align-items: center;
-                font: $text-title-small;
-                color: $grey1-color;
-                text-decoration: none;
-                text-align: center;
-
-                &:hover {
-                    color: $white-color;
-                }
-            }
-        }
-
-        .navbarShowButton {
-            width: 10%;
-            position: absolute;
-            right: 10px;
-            top: 10px;
-            display: flex;
-            justify-content: center;
-            font: $text-title-big;
-
-            button {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                color: $grey1-color;
-                cursor: pointer;
-                background-color: transparent;
-                border: none;
-            }
-
-            button:hover {
-                color: $white-color;
-            }
-        }
+      }
     }
+  }
 
-    //visivility-prop
-    .hidden {
-        display: flex;
-        justify-content: flex-end;
-        // @include navbar-gradient;
+  //visivility-prop
+  .hidden {
+    display: flex;
+    justify-content: flex-end;
+    // @include navbar-gradient;
 
-        .navbarOptions {
-            display: none;
-            opacity: 0;
-            top: -100px;
-        }
+    .navbarOptions {
+      display: none;
+      opacity: 0;
+      top: -100px;
     }
+  }
 
-    .show {
-        .navbarOptions {
-            opacity: 100;
-            top: 0px;
-        }
+  .show {
+    .navbarOptions {
+      opacity: 100;
+      top: 0px;
     }
+  }
 }
 
 @include desktop {
-    .navbarContent {
-
-        .navbarOptions  {
-            display: flex !important;
-            height: 8vh !important;
-            width: 100% !important;
-            flex-direction: row !important;
-            justify-content: center !important;
-            opacity: 100 !important;;
-            top: 0px !important;;
-        }
-        .navbarShowButton {
-            display: none !important;
-        }
+  .navbarContent {
+    .navbarOptions {
+      display: flex !important;
+      height: 8vh !important;
+      width: 100% !important;
+      flex-direction: row !important;
+      justify-content: center !important;
+      opacity: 100 !important;
+      top: 0px !important;
     }
+    .navbarShowButton {
+      display: none !important;
+    }
+  }
 }

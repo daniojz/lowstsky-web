@@ -7,11 +7,7 @@
     "key": "key",
     "send": "Enviar"
   },
-  "keyScales": [
-    "Dm",
-    "C#",
-    "Cm"
-  ],
+  "keyScales": ["Dm", "C#", "Cm"],
   "contact": {
     "email": {
       "name": "lowstsky",
