@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Link } from 'wouter'
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import { Icon } from '@iconify/react'
 
 const Navbar = () => {
@@ -32,27 +32,13 @@ const Navbar = () => {
       }`}
     >
       <div className={`navbarContainer`}>
-        <Link href='/home'>
-          <a>{t('header.navbar.sobreMi')}</a>
-        </Link>
-        <Link href='/typeBeats'>
-          <a>{t('header.navbar.typeBeats')}</a>
-        </Link>
-        <Link href='/'>
-          <a>{t('header.navbar.beatsPersonalizados')}</a>
-        </Link>
-        <Link href='/'>
-          <a>{t('header.navbar.mezclaMastering')}</a>
-        </Link>
-        <Link href='/'>
-          <a>{t('header.navbar.produccionesColabs')}</a>
-        </Link>
-        <Link href='/'>
-          <a>{t('header.navbar.artwork')}</a>
-        </Link>
-        <Link href='/'>
-          <a>{t('header.navbar.contact')}</a>
-        </Link>
+        <Link to='/home'>{t('header.navbar.home')}</Link>
+        <Link to='/typeBeats'>{t('header.navbar.typeBeats')}</Link>
+        <Link to='/'>{t('header.navbar.beatsPersonalizados')}</Link>
+        <Link to='/'>{t('header.navbar.mezclaMastering')}</Link>
+        <Link to='/'>{t('header.navbar.produccionesColabs')}</Link>
+        <Link to='/'>{t('header.navbar.artwork')}</Link>
+        <Link to='/'>{t('header.navbar.contact')}</Link>
       </div>
       <div className='navbarShowButton'>
         <button onClick={handleLogoOnClick}>

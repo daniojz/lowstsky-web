@@ -21,14 +21,14 @@ sagaMiddleware.run(rootSaga)
 
 function App() {
   return (
-    <Provider store={store}>
-      <div className='App'>
-        <header>
-          <Navbar></Navbar>
-        </header>
-        <main>
-          <Loading></Loading>
-          <Router>
+    <Router>
+      <Provider store={store}>
+        <div className='App'>
+          <header>
+            <Navbar></Navbar>
+          </header>
+          <main>
+            <Loading></Loading>
             <Routes>
               <Route exact path='/' element={<Home />} />
               <Route exact path='/home' element={<Home />} />
@@ -39,13 +39,13 @@ function App() {
                 element={<AddTypeBeat />}
               />
             </Routes>
-          </Router>
-        </main>
-        <footer>
-          <Footer></Footer>
-        </footer>
-      </div>
-    </Provider>
+          </main>
+          <footer>
+            <Footer></Footer>
+          </footer>
+        </div>
+      </Provider>
+    </Router>
   )
 }
 
