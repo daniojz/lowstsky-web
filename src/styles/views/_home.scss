@@ -44,7 +44,7 @@
         visibility 0.2s linear 0s,
         opacity 0.2s,
         right 0.1s;
-      background-image: url('https://firebasestorage.googleapis.com/v0/b/lowstsky-web.appspot.com/o/1671796280790.png?alt=media&token=35ee2de5-cf35-4633-9196-53034ab9a3b0');
+      background-image: url(/src/assets/img/portrait_1.png);
       background-size: cover;
       color: white;
       font: $text-small;
@@ -110,6 +110,11 @@
     color: $white-color;
     text-align: center;
     font: $text-small;
+
+    a {
+      text-decoration: none;
+      color: $white-color;
+    }
   }
   .promoBoxContainer:hover {
     cursor: pointer;
@@ -149,6 +154,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      column-gap: 5%;
     }
     .songCoverContainer {
       width: 30vh;
