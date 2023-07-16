@@ -1,0 +1,13 @@
+.languageButton {
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+  position: absolute;
+  left: 30px;
+  top: 30px;
+  color: $white-color;
+  font: $text-big;
+  font-weight: bolder;
+}

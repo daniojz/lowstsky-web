@@ -1,4 +1,4 @@
-.scrollDownButtonContainer {
+.anchorButtonContainer {
   margin-bottom: 20px;
   position: absolute;
   bottom: 0;
@@ -30,7 +30,7 @@
     color: $grey1-color;
   }
 }
-.scrollDownButtonContainer:hover {
+.anchorButtonContainer:hover {
   color: $white-color;
 }
 

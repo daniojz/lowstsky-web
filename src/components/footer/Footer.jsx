@@ -1,5 +1,5 @@
 import FollowMe from '../FollowMe/FollowMe'
-import FooterBox from './footerBox/FooterBox'
+import FooterBox from './FooterBox/FooterBox'
 import { useTranslation } from 'react-i18next'
 
 const Footer = () => {

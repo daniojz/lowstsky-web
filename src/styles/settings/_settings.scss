@@ -15,7 +15,7 @@ $white-transparent-color: rgba(255, 255, 255, 0.5);
 $grey1-transparent-color: #bcbcbc7d;
 $grey2-transparent-color: #1c1c1c7d;
 $grey3-transparent-color: #0d0d0d7d;
-$grey4-transparent-color: #0d0d0db5;
+$grey4-transparent-color: #0d0d0de0;
 $black-transparent-color: rgba(0, 0, 0, 0.5);
 
 $blue-button-color: rgb(36, 0, 214);
@@ -23,7 +23,7 @@ $white-button-color: $white-color;
 $grey-button-color: $grey1-color;
 
 //gradients
-@mixin navbar-gradient {
+@mixin black-transparent-gradient {
   background: rgba(0, 0, 0, 0.8);
   background: -moz-linear-gradient(
     top,
@@ -87,13 +87,13 @@ $medium-screen: 992px;
 $small-screen: 768px;
 $super-small-screen: 576px;
 
-@mixin tablet {
-  @media screen and (min-width: #{$small-screen}) {
-    @content;
-  }
-}
-@mixin desktop {
-  @media screen and (min-width: #{$medium-screen}) {
-    @content;
-  }
-}
+// @mixin tablet {
+//   @media screen and (min-width: #{$small-screen}) {
+//     @content;
+//   }
+// }
+// @mixin desktop {
+//   @media screen and (min-width: #{$medium-screen}) {
+//     @content;
+//   }
+// }
