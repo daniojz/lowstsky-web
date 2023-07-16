@@ -35,8 +35,8 @@
     }
   },
   "header": {
-    "navbar": {
-      "sobreMi": "HOME",
+    "navMenu": {
+      "home": "HOME",
       "typeBeats": "TYPE BEATS",
       "beatsPersonalizados": "BEATS PERSONALIZADOS",
       "mezclaMastering": "MEZCLA Y MASTERING",

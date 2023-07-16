@@ -44,10 +44,11 @@ section {
 @import './settings/settings';
 
 //components
-@import './components/navbar';
+@import './components/navMenu';
 @import './components/footer';
 @import './components/followMe';
-@import './components/scrollDownButton';
+@import './components/anchorButton';
+@import './components/languageButton';
 @import './components/loading';
 @import './components/beatCard';
 @import './components/button';

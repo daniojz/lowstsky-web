@@ -7,20 +7,20 @@ import PropTypes from 'prop-types'
  * @param {string} color color of the icon
  *
  */
-const ScrollDownButton = ({ anchor, color }) => {
+const AnchorButton = ({ anchor, color }) => {
   return (
-    <a href={anchor} className={`scrollDownButtonContainer ${color}`}>
+    <a href={anchor} className={`anchorButtonContainer ${color}`}>
       <Icon icon='akar-icons:chevron-down' width='20' height='20' />
     </a>
   )
 }
 
-ScrollDownButton.propTypes = {
+AnchorButton.propTypes = {
   anchor: PropTypes.string.isRequired,
   color: PropTypes.string,
 }
-ScrollDownButton.defaultProps = {
+AnchorButton.defaultProps = {
   color: 'grey',
 }
 
-export default ScrollDownButton
+export default AnchorButton

@@ -5,8 +5,8 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 import createSagaMiddleware from 'redux-saga'
 import rootSaga from './sagas'
 import rootReducer from './reducers'
-import Navbar from './components/navbar/Navbar'
-import Footer from './components/footer/Footer'
+import NavMenu from './components/NavMenu/NavMenu'
+import Footer from './components/Footer/Footer'
 import Loading from './components/Loading/Loading'
 import Home from './pages/Home'
 import TypeBeats from './pages/TypeBeats'
@@ -25,7 +25,7 @@ function App() {
       <Provider store={store}>
         <div className='App'>
           <header>
-            <Navbar></Navbar>
+            <NavMenu></NavMenu>
           </header>
           <main>
             <Loading></Loading>

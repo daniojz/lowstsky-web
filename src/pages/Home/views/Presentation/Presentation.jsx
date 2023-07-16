@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import FollowMe from '../../../../components/FollowMe/FollowMe'
-import ScrollDownButton from '../../../../components/ScrollDownButton/ScrollDownButton'
+import AnchorButton from '../../../../components/AnchorButton/AnchorButton'
 
 const Presentation = () => {
   const [t, i18n] = useTranslation(['global', 'home'])
@@ -52,7 +52,7 @@ const Presentation = () => {
           <FollowMe color='white'></FollowMe>
         </div>
       </div>
-      <ScrollDownButton anchor='#promo'></ScrollDownButton>
+      <AnchorButton anchor='#promo'></AnchorButton>
     </div>
   )
 }
