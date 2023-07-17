@@ -1,16 +1,13 @@
-import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
 const SongCover = ({ imgUrl, pageUrl }) => {
   return (
-    <>
+    <div className='songCoverContainer'>
       <Link to={pageUrl}>
-        <div className='songCoverContainer'>
-          <img className='songCoverImg' src={imgUrl}></img>
-        </div>
+        <img className='songCoverImg' src={imgUrl}></img>
       </Link>
-    </>
+    </div>
   )
 }
 

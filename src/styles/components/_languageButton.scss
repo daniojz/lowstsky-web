@@ -1,13 +1,26 @@
 .languageButton {
-  width: 60px;
+  width: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
   column-gap: 10px;
   position: absolute;
-  left: 30px;
-  top: 30px;
+  right: 35px;
+  top: 95vh;
   color: $white-color;
-  font: $text-big;
+  font: $text-medium;
   font-weight: bolder;
+  cursor: pointer;
+
+  &:hover {
+    color: $grey1-color;
+  }
+}
+
+@media (max-width: $medium-screen) {
+  .languageButton {
+    right: auto;
+    left: 35px;
+    top: 35px;
+  }
 }
