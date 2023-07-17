@@ -6,7 +6,30 @@ const LastReleases = () => {
 
   return (
     <div className='lastReleasesContent'>
-      <h1 className='lastReleasesTitle'>{t('lastReleases.title')}</h1>
+      <div className='lastReleasesInfiniteSlider'>
+        <div className='lastReleasesSliderTrack'>
+          <h1 className='lastReleasesTitle'>{t('lastReleases.title')}</h1>
+          <span className='lastReleasesTitle'>{t('lastReleases.title')}</span>
+          <span className='lastReleasesTitle'>{t('lastReleases.title')}</span>
+          <span className='lastReleasesTitle'>{t('lastReleases.title')}</span>
+          <span className='lastReleasesTitle'>{t('lastReleases.title')}</span>
+          <span className='lastReleasesTitle'>{t('lastReleases.title')}</span>
+          <span className='lastReleasesTitle'>{t('lastReleases.title')}</span>
+          <span className='lastReleasesTitle'>{t('lastReleases.title')}</span>
+          <span className='lastReleasesTitle'>{t('lastReleases.title')}</span>
+          <span className='lastReleasesTitle'>{t('lastReleases.title')}</span>
+          <h1 className='lastReleasesTitle'>{t('lastReleases.title')}</h1>
+          <span className='lastReleasesTitle'>{t('lastReleases.title')}</span>
+          <span className='lastReleasesTitle'>{t('lastReleases.title')}</span>
+          <span className='lastReleasesTitle'>{t('lastReleases.title')}</span>
+          <span className='lastReleasesTitle'>{t('lastReleases.title')}</span>
+          <span className='lastReleasesTitle'>{t('lastReleases.title')}</span>
+          <span className='lastReleasesTitle'>{t('lastReleases.title')}</span>
+          <span className='lastReleasesTitle'>{t('lastReleases.title')}</span>
+          <span className='lastReleasesTitle'>{t('lastReleases.title')}</span>
+          <span className='lastReleasesTitle'>{t('lastReleases.title')}</span>
+        </div>
+      </div>
       <div className='lastReleasesContainer'>
         <SongCover
           imgUrl={t('lastReleases.songCover1.imgUrl')}
