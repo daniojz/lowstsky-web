@@ -6,6 +6,15 @@
 
   span {
     margin: 0px 15px;
+
+    a {
+      text-decoration: none;
+      color: $white-color;
+
+      &:hover {
+        color: $grey1-color;
+      }
+    }
   }
 }
 

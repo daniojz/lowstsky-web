@@ -11,6 +11,8 @@
   font: $text-medium;
   font-weight: bolder;
   cursor: pointer;
+  background: none;
+  border: none;
 
   &:hover {
     color: $grey1-color;

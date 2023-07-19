@@ -1,13 +1,12 @@
 .navMenu {
   width: 100vw;
   height: 8vh;
-  padding: 10px 0;
   position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: transparent;
-  color: black;
+  color: $black-color;
   z-index: 80000;
 
   .navMenuContainer {
@@ -17,27 +16,33 @@
     align-items: center;
     transition: opacity 1s;
 
-    a {
+    .navMenuItem {
       margin: 0 20px;
+      display: flex;
+      justify-content: center;
       font: $text-title-small;
-      color: $grey1-color;
-      text-decoration: none;
-      text-align: center;
 
-      &:hover {
-        color: $white-color;
+      a {
+        text-decoration: none;
+        text-align: center;
+        color: $grey1-color;
+
+        &:hover {
+          color: $white-color;
+        }
       }
     }
   }
 }
 
-.navbar {
+.navBar {
   width: 100%;
+  height: 8vh;
   position: fixed;
   top: 0;
   z-index: 90000;
 
-  .navMenuButton {
+  .navBarButton {
     position: absolute;
     right: 30px;
     top: 30px;
@@ -61,6 +66,11 @@
   }
 }
 
+.navSocial {
+  height: 10%;
+  display: none;
+}
+
 .backgroundnavMenu {
   @include black-transparent-gradient;
 }
@@ -68,19 +78,39 @@
 @media only screen and (max-width: $medium-screen) {
   .navMenu {
     height: 100%;
+    display: flex;
+    flex-direction: column;
     background-color: $black-transparent-color;
   }
   .navMenuContainer {
+    height: 90%;
+    justify-content: center !important;
     flex-direction: column;
     align-items: end !important;
     row-gap: 20px;
 
-    a {
+    .navMenuItem {
+      position: relative;
+      left: -100vh;
+      width: 100%;
+      justify-content: right !important;
+      border-bottom: 1px white solid;
+      margin: 0 20px;
       font: $text-title-medium !important;
+      animation: itemSlide 0.5s forwards;
+
+      a {
+        text-align: right !important;
+      }
     }
   }
 
-  .navMenuButton {
+  .navSocial {
+    height: 10%;
+    display: block;
+  }
+
+  .navBarButton {
     display: block !important;
   }
 
@@ -88,5 +118,21 @@
     .navMenu {
       display: none;
     }
+  }
+}
+
+@keyframes itemSlide {
+  from {
+    opacity: 0;
+    left: -100vh;
+  }
+  to {
+    left: 0;
+    opacity: 100;
+  }
+}
+@for $i from 1 through 7 {
+  .navMenuContainer .navMenuItem:nth-child(#{$i}n) {
+    animation-delay: #{$i * 0.03}s;
   }
 }

@@ -1,4 +1,5 @@
 import { Icon } from '@iconify/react'
+import PropTypes from 'prop-types'
 
 const FollowMe = ({ color }) => {
   return (
@@ -30,6 +31,10 @@ const FollowMe = ({ color }) => {
       </span>
     </div>
   )
+}
+
+FollowMe.propTypes = {
+  color: PropTypes.string,
 }
 
 export default FollowMe
