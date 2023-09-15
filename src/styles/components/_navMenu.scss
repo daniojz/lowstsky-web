@@ -1,0 +1,92 @@
+.navMenu {
+  width: 100vw;
+  height: 8vh;
+  padding: 10px 0;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  color: black;
+  z-index: 80000;
+
+  .navMenuContainer {
+    width: 95%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    transition: opacity 1s;
+
+    a {
+      margin: 0 20px;
+      font: $text-title-small;
+      color: $grey1-color;
+      text-decoration: none;
+      text-align: center;
+
+      &:hover {
+        color: $white-color;
+      }
+    }
+  }
+}
+
+.navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 90000;
+
+  .navMenuButton {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    font: $text-title-big;
+    display: none;
+
+    button {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $grey1-color;
+      cursor: pointer;
+      background-color: transparent;
+      border: none;
+    }
+    button:hover {
+      color: $white-color;
+    }
+  }
+}
+
+.backgroundnavMenu {
+  @include black-transparent-gradient;
+}
+
+@media only screen and (max-width: $medium-screen) {
+  .navMenu {
+    height: 100%;
+    background-color: $black-transparent-color;
+  }
+  .navMenuContainer {
+    flex-direction: column;
+    align-items: end !important;
+    row-gap: 20px;
+
+    a {
+      font: $text-title-medium !important;
+    }
+  }
+
+  .navMenuButton {
+    display: block !important;
+  }
+
+  .navHidden {
+    .navMenu {
+      display: none;
+    }
+  }
+}

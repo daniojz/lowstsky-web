@@ -1,16 +1,33 @@
-import React from "react";
-import FollowMe from "../FollowMe/FollowMe";
-import FooterBox from "./footerBox/FooterBox";
+import FollowMe from '../FollowMe/FollowMe'
+import FooterBox from './FooterBox/FooterBox'
+import { useTranslation } from 'react-i18next'
 
-export default function Footer({}) {
-  const arr = ["one", "two", "three"];
-  console.log(Array.isArray(arr));
+const Footer = () => {
+  const [t, i18n] = useTranslation('global')
+
   return (
-    <footer>
-      <FollowMe></FollowMe>
-      <div className="footer_container">
-        <FooterBox title={"hola"} links={arr}></FooterBox>
+    <div className='footerContent'>
+      <FollowMe className='followMeContainer' color={'white'}></FollowMe>
+      <div className='footerContainer'>
+        <FooterBox
+          title={t('footer.footerBox.footerBox1.title')}
+          links={t('footer.footerBox.footerBox1.links')}
+        ></FooterBox>
+        <FooterBox
+          title={t('footer.footerBox.footerBox2.title')}
+          links={t('footer.footerBox.footerBox2.links')}
+        ></FooterBox>
+        <FooterBox
+          title={t('footer.footerBox.footerBox3.title')}
+          links={t('footer.footerBox.footerBox3.links')}
+        ></FooterBox>
+        <FooterBox
+          title={t('footer.footerBox.footerBox4.title')}
+          links={t('footer.footerBox.footerBox4.links')}
+        ></FooterBox>
       </div>
-    </footer>
-  );
+    </div>
+  )
 }
+
+export default Footer

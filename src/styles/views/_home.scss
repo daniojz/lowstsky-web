@@ -1,11 +1,261 @@
-#home_section {
+.presentationSection {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .presentationContent {
     width: 100%;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 
-    img {
-        width: 300px;
+    .logoContainer {
+      width: 50%;
+      height: 100%;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation-name: opacity-logo-transition;
+      animation-duration: 1s;
+
+      .logoContainer-icon {
+        width: 350px;
+      }
+
+      :hover {
+        cursor: pointer;
+      }
     }
+
+    .presentationContainer {
+      width: 50%;
+      height: 100vh;
+      display: flex;
+      justify-content: end;
+      align-items: center;
+      flex-direction: column;
+      position: relative;
+      flex-direction: column;
+      text-align: left;
+      transition:
+        visibility 0.2s linear 0s,
+        opacity 0.2s,
+        right 0.1s;
+      background-image: url(/src/assets/img/portrait_1.png);
+      background-size: cover;
+      color: white;
+      font: $text-small;
+
+      .presentationTextContent {
+        width: 100%;
+        text-align: justify;
+
+        * {
+          margin: 0% 5%;
+        }
+      }
+      .presentationContactContent {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        padding: 2% 0%;
+      }
+      .presentationFollowMeContent {
+        width: 100%;
+        margin: 2% 5%;
+      }
+    }
+
+    .presentationContainer-hidden {
+      position: absolute;
+      visibility: hidden;
+      opacity: 0;
+      right: 0;
+    }
+    .presentationContainer-show {
+      visibility: visible;
+      opacity: 1;
+      right: 0;
+    }
+  }
+}
+
+.promoSection {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .promoContent {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $black-color;
+  }
+  .promoBoxContainer {
+    width: 18%;
+    height: 50%;
+    margin: 2%;
+    padding: 2%;
+    background-color: rgba(128, 128, 128, 0.156);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    color: $white-color;
+    text-align: center;
+    font: $text-small;
+
+    a {
+      text-decoration: none;
+      color: $white-color;
+    }
+  }
+  .promoBoxContainer:hover {
+    cursor: pointer;
+    background-color: rgba(128, 128, 128, 0.448);
+  }
+}
+
+.lastReleasesSection {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+
+  .lastReleasesContent {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    background-color: $black-color;
+
+    .lastReleasesInfiniteSlider {
+      width: 95vw;
+      margin-bottom: 90px;
+      overflow: hidden;
+
+      .lastReleasesSliderTrack {
+        width: calc(360px * 10);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 30px;
+        white-space: nowrap;
+        -webkit-animation: scroll 35s linear infinite;
+        animation: scroll 35s linear infinite;
+
+        .lastReleasesTitle {
+          width: 360px;
+          height: 10%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: $grey1-color;
+          font: $text-title-medium;
+          text-align: center;
+
+          &:hover {
+            color: $white-color;
+          }
+        }
+      }
+    }
+    .lastReleasesContainer {
+      width: 100%;
+      margin: 5% 0% 15% 0%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      column-gap: 5%;
+      flex-wrap: wrap;
+    }
+    .songCoverContainer {
+      width: 300px;
+      height: 300px;
+      margin: 4%;
+      transition:
+        width 0.1s,
+        height 0.1s;
+      box-shadow: 0px 0px 500px -90px $grey1-color;
+
+      .songCoverImg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .songCoverContainer:hover {
+      width: 350px;
+      height: 350px;
+      cursor: pointer;
+      box-shadow: 0px 0px 250px -50px $grey1-color;
+    }
+  }
+}
+
+@media (max-width: $big-screen) {
+  .homeSection .homeContainer {
+    .homeContent {
+      width: 800px;
+    }
+    .logoButton-state1 {
+      left: 250px;
+    }
+    .presentationContainer-hidden {
+      right: 250px;
+    }
+  }
+}
+
+@media (max-width: $medium-screen) {
+  .homeSection .homeContainer {
+    .homeContent {
+      width: 600px;
+    }
+    .logoButton-state1 {
+      left: 150px;
+    }
+    .presentationContainer-hidden {
+      right: 150px;
+    }
+  }
+  .promoSection .promoContent {
+    flex-direction: column;
+    margin: 12% 0 16%;
+
+    .promoBoxContainer {
+      width: 80%;
+      height: 40%;
+    }
+  }
+  .lastReleasesSection .lastReleasesContent .lastReleasesContainer {
+    height: auto;
+  }
+}
+
+@keyframes opacity-logo-transition {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scroll {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-360px * 7);
+    transform: translateX(calc(-360px * 7));
+  }
 }

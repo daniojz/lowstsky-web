@@ -1,19 +1,41 @@
-.followMe_container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    background-color: transparent;
+.followMeContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
 
-    span {
-        margin: 0px 15px;
+  span {
+    margin: 0px 15px;
+  }
+}
 
-        a {
-            text-decoration: none;
-            color: $grey1-color;
-            
-            &:hover {
-                color: $white-color;
-            }
-        }
+.grey {
+  a {
+    text-decoration: none;
+    color: $grey1-color;
+
+    &:hover {
+      color: $white-color;
     }
+  }
+}
+.white {
+  a {
+    text-decoration: none;
+    color: $white-color;
+
+    &:hover {
+      color: $grey1-color;
+    }
+  }
+}
+.black {
+  a {
+    text-decoration: none;
+    color: $black-color;
+
+    &:hover {
+      color: $white-color;
+    }
+  }
 }
